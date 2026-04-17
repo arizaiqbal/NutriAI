@@ -9,6 +9,7 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 # Groq LLM
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
 
 # External APIs
 SPOONACULAR_KEY = os.getenv("SPOONACULAR_KEY")

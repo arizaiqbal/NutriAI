@@ -21,7 +21,12 @@ def save_user(user_data: dict) -> dict:
     """
     client = get_client()
     response = client.table("users").insert(user_data).execute()
-    return response.data[0] if response.data else {}
+    if response.data:
+        return response.data[0]
+
+    # Some Supabase/PostgREST setups return no inserted rows even when the
+    # write succeeds, so re-fetch by email before treating this as a failure.
+    return get_user_by_email(user_data["email"]) if user_data.get("email") else {}
 
 
 def get_user_by_email(email: str) -> dict:
