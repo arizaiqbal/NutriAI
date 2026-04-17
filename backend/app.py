@@ -13,6 +13,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from backend.routes.user_routes import user_bp
 from backend.routes.chat_routes import chat_bp
 from backend.routes.meal_routes import meal_bp
+from backend.routes.nutrition_routes import nutrition_bp
 
 def create_app():
     """
@@ -29,6 +30,7 @@ def create_app():
     app.register_blueprint(user_bp, url_prefix="/api/user")
     app.register_blueprint(chat_bp, url_prefix="/api/chat")
     app.register_blueprint(meal_bp, url_prefix="/api/meal")
+    app.register_blueprint(nutrition_bp, url_prefix="/api/nutrition")
 
     return app
 
