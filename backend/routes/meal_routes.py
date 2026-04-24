@@ -1,4 +1,6 @@
 from flask import Blueprint, request, jsonify
+from backend.services.ml_service import predict_calories, get_health_score, get_model_info
+from backend.services.search_service import best_first_search, knapsack_grocery
 from backend.services.groq_service import ask_groq_with_context
 from backend.services.supabase_service import (
     get_user_by_email,
@@ -152,3 +154,46 @@ def generate_grocery_list():
 
     grocery_list = ask_groq_with_context(prompt, user)
     return jsonify({"grocery_list": grocery_list}), 200
+
+
+
+@meal_bp.route("/ml-predict", methods=["POST"])
+def ml_predict():
+    data = request.json
+    predicted = predict_calories(
+        data["weight"], data["height"],
+        data["age"], data["gender"],
+        data.get("activity_level", 2)
+    )
+    return jsonify({
+        "ml_predicted_calories": predicted,
+        "model_info": get_model_info()
+    })
+
+@meal_bp.route("/health-score", methods=["POST"])
+def health_score():
+    data = request.json
+    score = get_health_score(
+        data.get("calories", 0),
+        data.get("protein", 0),
+        data.get("carbs", 0),
+        data.get("fat", 0)
+    )
+    label = "Healthy" if score >= 70 else "Moderate" if score >= 50 else "Unhealthy"
+    return jsonify({"health_score": score, "label": label})
+
+@meal_bp.route("/search", methods=["POST"])
+def search_recipes():
+    data = request.json
+    ingredients = data.get("ingredients", [])
+    recipes = data.get("recipes", [])
+    results = best_first_search(ingredients, recipes)
+    return jsonify({"results": results})
+
+@meal_bp.route("/optimize-grocery", methods=["POST"])
+def optimize_grocery():
+    data = request.json
+    items = data.get("items", [])
+    budget = data.get("calorie_budget", 2000)
+    selected = knapsack_grocery(items, budget)
+    return jsonify({"optimized_list": selected})

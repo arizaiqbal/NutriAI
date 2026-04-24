@@ -152,6 +152,26 @@ def generate_grocery_list(email: str) -> dict:
         return {"error": str(e)}
 
 
+def get_meal_health_score(calories: float, protein: float, carbs: float, fat: float) -> dict:
+    """
+    POST /api/meal/health-score
+    Returns a lightweight health score for a meal.
+    """
+    try:
+        r = requests.post(
+            f"{BASE_URL}/api/meal/health-score",
+            json={
+                "calories": calories,
+                "protein": protein,
+                "carbs": carbs,
+                "fat": fat,
+            }
+        )
+        return r.json()
+    except Exception as e:
+        return {"error": str(e)}
+
+
 def create_nutrition_log(email: str, food_description: str) -> dict:
     """
     POST /api/nutrition/log

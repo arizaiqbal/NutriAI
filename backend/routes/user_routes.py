@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 from backend.services.bmi_service import calculate_bmi, calculate_daily_calories, get_bmi_category, get_macro_targets
+from backend.services.notification_service import get_water_reminder
 from backend.services.supabase_service import save_user, get_user_by_email, update_user
 
 # Blueprint object — "user" is its internal name, used for url_for() lookups
@@ -74,7 +75,11 @@ def register():
     if not saved:
         return jsonify({"error": "Failed to save user profile"}), 500
 
-    return jsonify({"message": "User registered successfully", "user": saved}), 201
+    return jsonify({
+        "message": "User registered successfully",
+        "user": saved,
+        "notification": get_water_reminder(saved.get("name", "")),
+    }), 201
 
 
 @user_bp.route("/profile", methods=["GET"])
@@ -95,7 +100,10 @@ def get_profile():
     if not user:
         return jsonify({"error": "User not found"}), 404
 
-    return jsonify(user), 200
+    return jsonify({
+        "user": user,
+        "notification": get_water_reminder(user.get("name", "")),
+    }), 200
 
 
 @user_bp.route("/update", methods=["PUT"])
