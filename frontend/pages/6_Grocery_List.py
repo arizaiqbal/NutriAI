@@ -6,6 +6,7 @@ import streamlit as st
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
+from frontend.components.api_client import optimize_grocery_items
 from frontend.components.ui_helpers import apply_theme, show_card
 
 
@@ -34,7 +35,7 @@ if st.button("Generate Grocery List", use_container_width=True):
         st.warning("Please paste a meal plan first.")
 
 st.divider()
-show_card("Optimize Grocery List", "Enter candidate items and the optimizer will pick the strongest set within your calorie budget.")
+show_card("Optimize Grocery List", "Enter candidate items and Knapsack DP will pick the highest nutrition-score set within your calorie budget.")
 
 calorie_budget = st.number_input("Daily calorie budget", 1000, 4000, 2000)
 
@@ -53,12 +54,21 @@ for i in range(num_items):
 
 if st.button("Optimize List", use_container_width=True):
     if items:
-        response = requests.post(
-            "http://localhost:5000/api/meal/optimize-grocery",
-            json={"items": items, "calorie_budget": calorie_budget},
-        )
-        if response.ok:
-            selected = response.json()["optimized_list"]
-            show_card("Optimized grocery list", "<br>".join([f"- {item}" for item in selected]))
+        data = optimize_grocery_items(items, calorie_budget)
+        if "error" not in data:
+            selected = data.get("optimized_list", [])
+            lines = [
+                f"Algorithm: {data.get('algorithm', '0/1 Knapsack Dynamic Programming')}",
+                f"Total calories: {data.get('total_calories', 0)}",
+                f"Total nutrition score: {data.get('total_nutrition_score', 0)}",
+                "",
+            ]
+            lines.extend(
+                f"- {item['name']} ({item['calories']} kcal, score {item['nutrition_score']})"
+                for item in selected
+            )
+            show_card("Optimized grocery list", "<br>".join(lines))
+        else:
+            st.error(data["error"])
     else:
         st.warning("Please add some items first.")

@@ -95,7 +95,7 @@ def get_chat_history(email: str) -> dict:
 def generate_meal_plan(email: str) -> dict:
     """
     POST /api/meal/generate
-    Asks Flask to generate a 7-day meal plan for the user.
+    Asks Flask to generate a 7-day meal plan with Backtracking Search.
     Returns {"meal_plan": "..."} with the full plan text.
     """
     try:
@@ -146,6 +146,36 @@ def generate_grocery_list(email: str) -> dict:
         r = requests.post(
             f"{BASE_URL}/api/meal/grocery-list",
             json={"email": email}
+        )
+        return r.json()
+    except Exception as e:
+        return {"error": str(e)}
+
+
+def send_demo_notification(email: str) -> dict:
+    """
+    POST /api/user/send-demo-notification
+    Sends one real email notification to the registered profile email.
+    """
+    try:
+        r = requests.post(
+            f"{BASE_URL}/api/user/send-demo-notification",
+            json={"email": email},
+        )
+        return r.json()
+    except Exception as e:
+        return {"error": str(e)}
+
+
+def optimize_grocery_items(items: list, calorie_budget: int) -> dict:
+    """
+    POST /api/meal/optimize-grocery
+    Runs Knapsack DP to select the highest nutrition-score items within budget.
+    """
+    try:
+        r = requests.post(
+            f"{BASE_URL}/api/meal/optimize-grocery",
+            json={"items": items, "calorie_budget": calorie_budget},
         )
         return r.json()
     except Exception as e:

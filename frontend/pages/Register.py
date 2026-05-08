@@ -5,7 +5,7 @@ import streamlit as st
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-from frontend.components.api_client import get_profile, register_user
+from frontend.components.api_client import get_profile, register_user, send_demo_notification
 from frontend.components.ui_helpers import (
     apply_theme,
     show_bmi_card,
@@ -21,6 +21,23 @@ def reset_user_session_state():
     st.session_state["chat_messages"] = []
     st.session_state["meal_plan"] = None
     st.session_state["nutrition_logs"] = []
+
+
+def show_email_result(email_result, success_default):
+    if email_result.get("sent"):
+        show_success(email_result.get("message", success_default))
+    elif email_result:
+        show_error(email_result.get("message", "Email notification failed."))
+
+
+def show_demo_notification_button(user, key):
+    if st.button("Send Demo Email Notification", use_container_width=True, key=key):
+        with st.spinner("Sending email notification..."):
+            result = send_demo_notification(user["email"])
+        if result.get("sent"):
+            show_success(result.get("message", "Email notification sent."))
+        else:
+            show_error(result.get("message", result.get("error", "Email notification failed.")))
 
 
 st.set_page_config(page_title="Register - NutriAI", page_icon="📋")
@@ -89,8 +106,13 @@ with tab_register:
                 show_success("Registration successful!")
                 if result.get("notification"):
                     st.info(result["notification"])
+                show_email_result(
+                    result.get("email_notification", {}),
+                    "Registration email notification sent.",
+                )
                 show_bmi_card(st.session_state["user"])
                 show_macro_breakdown(st.session_state["user"])
+                show_demo_notification_button(st.session_state["user"], "register_demo_email")
 
 with tab_login:
     show_card("Welcome back", "Reload your saved profile and jump right back into the app.")
@@ -112,5 +134,10 @@ with tab_login:
                 show_success(f"Welcome back, {user.get('name', '')}!")
                 if result.get("notification"):
                     st.info(result["notification"])
+                show_email_result(
+                    result.get("email_notification", {}),
+                    "Login reminder email notification sent.",
+                )
                 show_bmi_card(user)
                 show_macro_breakdown(user)
+                show_demo_notification_button(user, "login_demo_email")

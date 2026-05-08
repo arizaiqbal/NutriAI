@@ -1,6 +1,12 @@
 from flask import Blueprint, request, jsonify
 from backend.services.ml_service import predict_calories, get_health_score, get_model_info
-from backend.services.search_service import best_first_search, knapsack_grocery
+from backend.services.search_service import (
+    RECIPE_CATALOG,
+    best_first_search,
+    build_backtracking_meal_plan,
+    format_meal_plan,
+    knapsack_grocery,
+)
 from backend.services.groq_service import ask_groq_with_context
 from backend.services.supabase_service import (
     get_user_by_email,
@@ -16,9 +22,9 @@ meal_bp = Blueprint("meal", __name__)
 @meal_bp.route("/generate", methods=["POST"])
 def generate_meal_plan():
     """
-    Generates a 7-day personalized meal plan using Groq.
-    In Phase 5 this will be upgraded to use Spoonacular + backtracking algorithm.
-    For now it produces a well-structured text plan via LLM.
+    Generates a 7-day personalized meal plan using Backtracking Search.
+    Groq can still be used elsewhere for friendly explanations, but this
+    endpoint keeps the compulsory AI algorithm visible in the main flow.
 
     Expects JSON body:
     {
@@ -34,28 +40,27 @@ def generate_meal_plan():
     if not user:
         return jsonify({"error": "User not found"}), 404
 
-    prompt = f"""
-    Generate a 7-day meal plan for me. For each day include breakfast, lunch, dinner and one snack.
-    For each meal provide:
-    - Meal name
-    - Approximate calories
-    - Approximate protein, carbs, and fat in grams
-    Keep total daily calories close to {user['daily_calories']} kcal.
-    Dietary restrictions: {user.get('restrictions', 'none')}.
-    Goal: {user['goal']}.
-    Format each day clearly as Day 1, Day 2, etc.
-    """
+    plan_result = build_backtracking_meal_plan(
+        daily_calorie_target=user.get("daily_calories", 2000),
+        restrictions=user.get("restrictions", "none"),
+    )
+    if not plan_result.get("success"):
+        return jsonify({"error": plan_result.get("error", "Failed to generate meal plan")}), 422
 
-    plan_text = ask_groq_with_context(prompt, user)
+    plan_text = format_meal_plan(plan_result)
 
     # save to Supabase
     save_meal_plan({
         "user_id":    user["id"],
         "week_start": str(date.today()),
-        "plan_json":  json.dumps({"text": plan_text})
+        "plan_json":  json.dumps({"text": plan_text, "algorithm_plan": plan_result})
     })
 
-    return jsonify({"meal_plan": plan_text}), 200
+    return jsonify({
+        "meal_plan": plan_text,
+        "algorithm": plan_result["algorithm"],
+        "plan": plan_result["plan"],
+    }), 200
 
 
 @meal_bp.route("/latest", methods=["GET"])
@@ -83,9 +88,8 @@ def get_latest_plan():
 @meal_bp.route("/ingredient-suggest", methods=["POST"])
 def suggest_from_ingredients():
     """
-    Takes a list of available ingredients and suggests meals.
-    In Phase 5 this will use Best-First Search + Spoonacular.
-    For now uses Groq directly.
+    Takes a list of available ingredients and suggests meals using
+    Best-First Search over the recipe catalog.
 
     Expects JSON body:
     {
@@ -104,16 +108,22 @@ def suggest_from_ingredients():
     if not user:
         return jsonify({"error": "User not found"}), 404
 
-    prompt = f"""
-    I have these ingredients at home: {', '.join(ingredients)}.
-    Suggest 3 healthy meals I can make using some or all of these.
-    For each meal provide: name, ingredients used, estimated calories,
-    estimated protein/carbs/fat, and brief preparation steps.
-    Keep suggestions aligned with my goal: {user['goal']}.
-    """
+    ranked = best_first_search(ingredients, RECIPE_CATALOG, limit=5)
+    lines = ["Algorithm Used: Best-First Search", ""]
+    for recipe in ranked[:3]:
+        matched = ", ".join(recipe["matched_ingredients"]) or "none"
+        missing = ", ".join(recipe["missing_ingredients"][:4]) or "none"
+        lines.append(
+            f"- {recipe['name']} ({recipe['meal_type'].title()}, score {recipe['search_score']}): "
+            f"{recipe['calories']} kcal, P {recipe['protein']}g, C {recipe['carbs']}g, F {recipe['fat']}g. "
+            f"Matched: {matched}. Missing: {missing}."
+        )
 
-    suggestions = ask_groq_with_context(prompt, user)
-    return jsonify({"suggestions": suggestions}), 200
+    return jsonify({
+        "algorithm": "Best-First Search",
+        "suggestions": "\n".join(lines),
+        "recipes": ranked,
+    }), 200
 
 
 @meal_bp.route("/grocery-list", methods=["POST"])
@@ -195,5 +205,10 @@ def optimize_grocery():
     data = request.json
     items = data.get("items", [])
     budget = data.get("calorie_budget", 2000)
-    selected = knapsack_grocery(items, budget)
-    return jsonify({"optimized_list": selected})
+    result = knapsack_grocery(items, budget)
+    return jsonify({
+        "algorithm": result["algorithm"],
+        "optimized_list": result["selected_items"],
+        "total_calories": result["total_calories"],
+        "total_nutrition_score": result["total_nutrition_score"],
+    })

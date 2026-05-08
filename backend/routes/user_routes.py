@@ -1,6 +1,10 @@
 from flask import Blueprint, request, jsonify
 from backend.services.bmi_service import calculate_bmi, calculate_daily_calories, get_bmi_category, get_macro_targets
-from backend.services.notification_service import get_water_reminder
+from backend.services.notification_service import (
+    get_water_reminder,
+    send_demo_notification,
+    send_registration_notification,
+)
 from backend.services.supabase_service import save_user, get_user_by_email, update_user
 
 # Blueprint object — "user" is its internal name, used for url_for() lookups
@@ -75,10 +79,16 @@ def register():
     if not saved:
         return jsonify({"error": "Failed to save user profile"}), 500
 
+    email_sent, email_message = send_registration_notification(saved)
+
     return jsonify({
         "message": "User registered successfully",
         "user": saved,
         "notification": get_water_reminder(saved.get("name", "")),
+        "email_notification": {
+            "sent": email_sent,
+            "message": email_message,
+        },
     }), 201
 
 
@@ -100,9 +110,15 @@ def get_profile():
     if not user:
         return jsonify({"error": "User not found"}), 404
 
+    email_sent, email_message = send_demo_notification(user)
+
     return jsonify({
         "user": user,
         "notification": get_water_reminder(user.get("name", "")),
+        "email_notification": {
+            "sent": email_sent,
+            "message": email_message,
+        },
     }), 200
 
 
@@ -155,3 +171,19 @@ def update_profile():
 
     updated = update_user(email, updates)
     return jsonify({"message": "Profile updated", "user": updated}), 200
+
+
+@user_bp.route("/send-demo-notification", methods=["POST"])
+def send_demo_email_notification():
+    data = request.get_json()
+    email = data.get("email")
+    if not email:
+        return jsonify({"error": "email is required"}), 400
+
+    user = get_user_by_email(email)
+    if not user:
+        return jsonify({"error": "User not found"}), 404
+
+    sent, message = send_demo_notification(user)
+    status = 200 if sent else 502
+    return jsonify({"sent": sent, "message": message}), status

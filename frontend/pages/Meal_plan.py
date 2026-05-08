@@ -9,6 +9,7 @@ from frontend.components.api_client import (
     generate_grocery_list,
     generate_meal_plan,
     get_latest_meal_plan,
+    optimize_grocery_items,
     suggest_from_ingredients,
 )
 from frontend.components.ui_helpers import apply_theme, require_login, show_card, show_error, show_feature_grid, show_success
@@ -39,7 +40,7 @@ tab_plan, tab_ingredients, tab_grocery = st.tabs([
 ])
 
 with tab_plan:
-    show_card("7-day plan", f"Generate a personalized plan built around {user.get('daily_calories')} kcal per day.")
+    show_card("7-day plan", f"Generate a personalized plan built around {user.get('daily_calories')} kcal per day using Backtracking Search.")
     col1, col2 = st.columns(2)
 
     with col1:
@@ -51,6 +52,7 @@ with tab_plan:
                 show_error(result["error"])
             else:
                 st.session_state["meal_plan"] = result["meal_plan"]
+                st.caption(f"Algorithm: {result.get('algorithm', 'Backtracking Search')}")
                 show_success("Meal plan generated and saved!")
 
     with col2:
@@ -70,7 +72,7 @@ with tab_plan:
         show_card("Fresh plan", st.session_state["meal_plan"])
 
 with tab_ingredients:
-    show_card("Ingredient ideas", "Tell NutriAI what is in your kitchen and get playful meal suggestions back.")
+    show_card("Ingredient ideas", "Tell NutriAI what is in your kitchen. Best-First Search ranks matching meals by ingredient overlap and nutrition score.")
     ingredient_input = st.text_area(
         "Available Ingredients",
         placeholder="chicken, spinach, garlic, olive oil, tomatoes, onion",
@@ -88,10 +90,11 @@ with tab_ingredients:
             if "error" in result:
                 show_error(result["error"])
             else:
+                st.caption(f"Algorithm: {result.get('algorithm', 'Best-First Search')}")
                 show_card("Suggested meals", result["suggestions"])
 
 with tab_grocery:
-    show_card("Grocery helper", "Turn your latest meal plan into a shopping list with one click.")
+    show_card("Grocery helper", "Turn your latest meal plan into a shopping list, or run Knapsack DP to choose the best food items inside a calorie budget.")
     if not st.session_state.get("meal_plan"):
         st.info("Generate or load a meal plan first, then come back here.")
 
@@ -103,3 +106,45 @@ with tab_grocery:
             show_error(result["error"])
         else:
             show_card("Your grocery list", result["grocery_list"])
+
+    st.divider()
+    st.markdown("### Knapsack DP Optimizer")
+    calorie_budget = st.number_input("Calorie budget", 500, 4000, int(user.get("daily_calories", 2000)))
+    item_count = st.number_input("Number of candidate items", 1, 12, 4)
+
+    optimizer_items = []
+    for i in range(item_count):
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            name = st.text_input(f"Food item {i + 1}", key=f"meal_opt_name_{i}")
+        with col2:
+            calories = st.number_input("Calories", 0, 1200, 250, key=f"meal_opt_cal_{i}")
+        with col3:
+            score = st.number_input("Nutrition score", 1, 100, 70, key=f"meal_opt_score_{i}")
+        if name.strip():
+            optimizer_items.append({
+                "name": name.strip(),
+                "calories": calories,
+                "nutrition_score": score,
+            })
+
+    if st.button("Optimize with Knapsack DP", use_container_width=True):
+        if not optimizer_items:
+            show_error("Please add at least one food item.")
+        else:
+            result = optimize_grocery_items(optimizer_items, calorie_budget)
+            if "error" in result:
+                show_error(result["error"])
+            else:
+                selected = result.get("optimized_list", [])
+                lines = [
+                    f"Algorithm: {result.get('algorithm', '0/1 Knapsack Dynamic Programming')}",
+                    f"Total calories: {result.get('total_calories', 0)}",
+                    f"Total nutrition score: {result.get('total_nutrition_score', 0)}",
+                    "",
+                ]
+                lines.extend(
+                    f"- {item['name']} ({item['calories']} kcal, score {item['nutrition_score']})"
+                    for item in selected
+                )
+                show_card("Optimized grocery picks", "<br>".join(lines))

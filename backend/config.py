@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()  # reads the .env file and loads variables into environment
+load_dotenv("env", override=False)  # local fallback used by this workspace
 
 # Supabase
 SUPABASE_URL = os.getenv("SUPABASE_URL")
@@ -18,3 +19,6 @@ USDA_KEY        = os.getenv("USDA_KEY")
 # Gmail
 GMAIL_USER = os.getenv("GMAIL_USER")
 GMAIL_PASS = os.getenv("GMAIL_PASS")
+
+print(repr(SUPABASE_URL))
+print(repr(SUPABASE_KEY))

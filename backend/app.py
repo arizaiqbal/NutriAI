@@ -39,4 +39,4 @@ if __name__ == "__main__":
     app = create_app()
     # debug=True means Flask auto-restarts when you edit a file
     # and shows detailed error pages — only use in development
-    app.run(debug=True, port=5000)
+    app.run(debug=False, port=5000, use_reloader=False)
