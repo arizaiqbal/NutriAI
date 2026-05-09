@@ -14,7 +14,7 @@ st.set_page_config(page_title="Nutrition Log - NutriAI", page_icon="📊")
 apply_theme(
     "Nutrition Log",
     "Keep a cute running diary of meals, calories, and macros without losing the helpful structure.",
-    badge="Daily Diary",
+    badge="Nutrition Tracking",
 )
 
 user = require_login()

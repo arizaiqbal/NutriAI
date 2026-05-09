@@ -18,7 +18,7 @@ st.set_page_config(page_title="Grocery List - NutriAI", page_icon="🛒")
 apply_theme(
     "Grocery List",
     "Generate a shopping list from a meal plan or optimize item choices with a colorful little planner.",
-    badge="Pantry Pop",
+    badge="Grocery Planning",
 )
 
 show_card("Generate from saved meal plan", "Load your latest saved meal plan and generate a grocery list automatically, or use the optimizer below to choose the best items inside a calorie budget.")
@@ -83,7 +83,6 @@ if st.button("Optimize List", use_container_width=True):
         if "error" not in data:
             selected = data.get("optimized_list", [])
             lines = [
-                f"Algorithm: {data.get('algorithm', '0/1 Knapsack Dynamic Programming')}",
                 f"Total calories: {data.get('total_calories', 0)}",
                 f"Total nutrition score: {data.get('total_nutrition_score', 0)}",
                 "",

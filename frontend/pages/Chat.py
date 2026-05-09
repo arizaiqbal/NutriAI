@@ -14,7 +14,7 @@ st.set_page_config(page_title="Chat - NutriAI", page_icon="💬")
 apply_theme(
     "Chat with NutriAI",
     "Ask for food swaps, healthy snacks, meal ideas, or nutrition help in a friendlier conversation space.",
-    badge="Chat Lounge",
+    badge="Nutrition Assistant",
 )
 show_card("Conversation ideas", "Try breakfast ideas, protein questions, snack swaps, hydration tips, or anything related to your nutrition goals.")
 

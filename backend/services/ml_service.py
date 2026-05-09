@@ -46,10 +46,13 @@ _ACTIVITY_MAP = {
 }
 
 _NUMERIC_ACTIVITY_MAP = {
+    # Frontend uses:
+    # 1 = Low, 2 = Moderate, 3 = High
     1: 1.2,
-    2: 1.375,
-    3: 1.55,
-    4: 1.725,
+    2: 1.55,
+    3: 1.725,
+    # Keep broader compatibility for callers that still send 4 or 5
+    4: 1.9,
     5: 1.9,
 }
 

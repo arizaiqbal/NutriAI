@@ -49,8 +49,8 @@ with st.sidebar:
 
 apply_theme(
     "Welcome to NutriAI",
-    "A more colorful, cozy nutrition dashboard for meal planning, logging, chat, and everyday healthy habits.",
-    badge="Glow Mode",
+    "A professional nutrition dashboard for meal planning, tracking, and personalized guidance.",
+    badge="NutriAI Dashboard",
 )
 
 show_feature_grid([
@@ -63,8 +63,8 @@ show_feature_grid([
 col1, col2 = st.columns([1.2, 1])
 with col1:
     show_card(
-        "Your pastel nutrition corner",
-        "Build meal plans, explore ingredient-based ideas, keep a food log, and ask nutrition questions in one softer, more visually cheerful space.",
+        "Unified nutrition workspace",
+        "Generate meal plans, explore ingredient-based suggestions, track nutrition logs, and ask personalized nutrition questions in one place.",
     )
 
 with col2:

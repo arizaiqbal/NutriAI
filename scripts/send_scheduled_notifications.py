@@ -5,6 +5,7 @@ from email.mime.text import MIMEText
 
 from dotenv import load_dotenv
 from supabase import create_client
+from backend.services.notification_service import build_daily_nutrition_guidance
 
 
 load_dotenv()
@@ -33,19 +34,7 @@ def send_email(to_email, subject, body):
 
 
 def build_reminder(user):
-    name = user.get("name", "there")
-    goal = user.get("goal", "maintenance")
-    calories = user.get("daily_calories", "your")
-
-    return (
-        f"Hi {name},\n\n"
-        "This is your automated NutriBot reminder.\n\n"
-        f"Goal: {goal}\n"
-        f"Daily calorie target: {calories} kcal\n\n"
-        "Water reminder: drink a glass of water now.\n"
-        "Meal reminder: choose a balanced meal from your NutriBot plan today.\n\n"
-        "Regards,\nNutriBot"
-    )
+    return build_daily_nutrition_guidance(user)
 
 
 def main():
@@ -63,7 +52,7 @@ def main():
             continue
         send_email(
             email,
-            "NutriBot Automated Water and Meal Reminder",
+            "NutriBot Daily Nutrition Guidance",
             build_reminder(user),
         )
         print(f"[NOTIFICATIONS] Sent reminder to {email}")

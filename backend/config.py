@@ -19,6 +19,3 @@ USDA_KEY        = os.getenv("USDA_KEY")
 # Gmail
 GMAIL_USER = os.getenv("GMAIL_USER")
 GMAIL_PASS = os.getenv("GMAIL_PASS")
-
-print(repr(SUPABASE_URL))
-print(repr(SUPABASE_KEY))

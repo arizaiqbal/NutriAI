@@ -20,7 +20,7 @@ st.set_page_config(page_title="Meal Plan - NutriAI", page_icon="🍽️")
 apply_theme(
     "Meal Planning",
     "Design a softer weekly flow with meal plans, ingredient-based ideas, and a matching grocery helper.",
-    badge="Meal Studio",
+    badge="Meal Planning",
 )
 
 user = require_login()
@@ -40,7 +40,7 @@ tab_plan, tab_ingredients, tab_grocery = st.tabs([
 ])
 
 with tab_plan:
-    show_card("7-day plan", f"Generate a personalized plan built around {user.get('daily_calories')} kcal per day using Backtracking Search.")
+    show_card("7-day plan", f"Generate a personalized plan built around {user.get('daily_calories')} kcal per day.")
     col1, col2 = st.columns(2)
 
     with col1:
@@ -52,7 +52,6 @@ with tab_plan:
                 show_error(result["error"])
             else:
                 st.session_state["meal_plan"] = result["meal_plan"]
-                st.caption(f"Algorithm: {result.get('algorithm', 'Backtracking Search')}")
                 show_success("Meal plan generated and saved!")
 
     with col2:
@@ -72,7 +71,7 @@ with tab_plan:
         show_card("Fresh plan", st.session_state["meal_plan"])
 
 with tab_ingredients:
-    show_card("Ingredient ideas", "Tell NutriAI what is in your kitchen. Best-First Search ranks matching meals by ingredient overlap and nutrition score.")
+    show_card("Ingredient ideas", "Tell NutriAI what is in your kitchen to get ranked meal suggestions based on ingredient overlap and nutrition quality.")
     ingredient_input = st.text_area(
         "Available Ingredients",
         placeholder="chicken, spinach, garlic, olive oil, tomatoes, onion",
@@ -90,11 +89,10 @@ with tab_ingredients:
             if "error" in result:
                 show_error(result["error"])
             else:
-                st.caption(f"Algorithm: {result.get('algorithm', 'Best-First Search')}")
                 show_card("Suggested meals", result["suggestions"])
 
 with tab_grocery:
-    show_card("Grocery helper", "Turn your latest meal plan into a shopping list, or run Knapsack DP to choose the best food items inside a calorie budget.")
+    show_card("Grocery helper", "Turn your latest meal plan into a shopping list, or optimize food choices inside a calorie budget.")
     if not st.session_state.get("meal_plan"):
         st.info("Generate or load a meal plan first, then come back here.")
 
@@ -108,7 +106,7 @@ with tab_grocery:
             show_card("Your grocery list", result["grocery_list"])
 
     st.divider()
-    st.markdown("### Knapsack DP Optimizer")
+    st.markdown("### Grocery Optimizer")
     calorie_budget = st.number_input("Calorie budget", 500, 4000, int(user.get("daily_calories", 2000)))
     item_count = st.number_input("Number of candidate items", 1, 12, 4)
 
@@ -128,7 +126,7 @@ with tab_grocery:
                 "nutrition_score": score,
             })
 
-    if st.button("Optimize with Knapsack DP", use_container_width=True):
+    if st.button("Optimize Grocery Picks", use_container_width=True):
         if not optimizer_items:
             show_error("Please add at least one food item.")
         else:
@@ -138,7 +136,6 @@ with tab_grocery:
             else:
                 selected = result.get("optimized_list", [])
                 lines = [
-                    f"Algorithm: {result.get('algorithm', '0/1 Knapsack Dynamic Programming')}",
                     f"Total calories: {result.get('total_calories', 0)}",
                     f"Total nutrition score: {result.get('total_nutrition_score', 0)}",
                     "",

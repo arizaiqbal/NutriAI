@@ -14,35 +14,57 @@ st.set_page_config(page_title="HealthyOrNot - NutriAI", page_icon="🌈")
 
 apply_theme(
     "HealthyOrNot",
-    "Play with calories and macros to see how the model classifies a meal and estimates your daily calorie needs.",
-    badge="ML Playground",
+    "Use ML tools to estimate daily calorie needs and classify meal quality from macronutrients.",
+    badge="ML Insights",
 )
-show_card("Nutrition Insights", "Two cute little tools live here: a calorie prediction model and a meal health classifier.")
+show_card("Nutrition Insights", "Use the calorie prediction model and meal health classifier for quick decision support.")
 
 st.subheader("Predict the calorie intake you need for today")
-col1, col2 = st.columns(2)
-with col1:
-    weight = st.number_input("Weight (kg)", 30, 200, 65)
-    height = st.number_input("Height (cm)", 100, 220, 165)
-    age = st.number_input("Age", 10, 100, 25)
-with col2:
-    gender = st.selectbox("Gender", ["female", "male"])
-    activity = st.selectbox("Activity Level Today", [1, 2, 3], format_func=lambda x: {1: "Low", 2: "Moderate", 3: "High"}[x])
+user = st.session_state.get("user")
+if user:
+    st.caption("Using your saved profile for age, gender, and height.")
+    col1, col2 = st.columns(2)
+    with col1:
+        weight = st.number_input(
+            "Current Weight (kg)",
+            30,
+            200,
+            int(round(float(user.get("weight_kg", 65)))),
+        )
+    with col2:
+        activity = st.selectbox(
+            "Activity Level Today",
+            [1, 2, 3],
+            format_func=lambda x: {1: "Low", 2: "Moderate", 3: "High"}[x],
+        )
+    height = float(user.get("height_cm", 165))
+    age = int(user.get("age", 25))
+    gender = str(user.get("gender", "female")).strip().lower() or "female"
+else:
+    col1, col2 = st.columns(2)
+    with col1:
+        weight = st.number_input("Weight (kg)", 30, 200, 65)
+        height = st.number_input("Height (cm)", 100, 220, 165)
+        age = st.number_input("Age", 10, 100, 25)
+    with col2:
+        gender = st.selectbox("Gender", ["female", "male"])
+        activity = st.selectbox(
+            "Activity Level Today",
+            [1, 2, 3],
+            format_func=lambda x: {1: "Low", 2: "Moderate", 3: "High"}[x],
+        )
 
-if st.button("Predict with ML Model", use_container_width=True):
+if st.button("Predict Calorie Target", use_container_width=True):
     response = requests.post(
         "http://localhost:5000/api/meal/ml-predict",
         json={"weight": weight, "height": height, "age": age, "gender": gender, "activity_level": activity},
     )
     if response.ok:
         data = response.json()
-        st.success(f"ML Predicted Calories: {data['ml_predicted_calories']} kcal/day")
+        st.success(f"Estimated Daily Calories: {data['ml_predicted_calories']} kcal/day")
         show_feature_grid([
             ("Prediction", f"{data['ml_predicted_calories']} kcal/day"),
-            ("Model", data["model_info"].get("type", "ML")),
         ])
-        with st.expander("Model Info"):
-            st.json(data["model_info"])
 
 st.divider()
 st.subheader("Food Health Score")

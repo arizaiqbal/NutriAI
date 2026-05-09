@@ -5,7 +5,7 @@ import streamlit as st
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-from frontend.components.api_client import get_profile, register_user, send_demo_notification
+from frontend.components.api_client import get_profile, register_user
 from frontend.components.ui_helpers import (
     apply_theme,
     show_bmi_card,
@@ -30,22 +30,12 @@ def show_email_result(email_result, success_default):
         show_error(email_result.get("message", "Email notification failed."))
 
 
-def show_demo_notification_button(user, key):
-    if st.button("Send Demo Email Notification", use_container_width=True, key=key):
-        with st.spinner("Sending email notification..."):
-            result = send_demo_notification(user["email"])
-        if result.get("sent"):
-            show_success(result.get("message", "Email notification sent."))
-        else:
-            show_error(result.get("message", result.get("error", "Email notification failed.")))
-
-
 st.set_page_config(page_title="Register - NutriAI", page_icon="📋")
 
 apply_theme(
     "Register / Login",
     "Create your wellness profile, calculate your targets, and jump back into your saved setup whenever you want.",
-    badge="Hello, cutie",
+    badge="Profile Setup",
 )
 
 show_feature_grid([
@@ -112,7 +102,6 @@ with tab_register:
                 )
                 show_bmi_card(st.session_state["user"])
                 show_macro_breakdown(st.session_state["user"])
-                show_demo_notification_button(st.session_state["user"], "register_demo_email")
 
 with tab_login:
     show_card("Welcome back", "Reload your saved profile and jump right back into the app.")
@@ -140,4 +129,3 @@ with tab_login:
                 )
                 show_bmi_card(user)
                 show_macro_breakdown(user)
-                show_demo_notification_button(user, "login_demo_email")

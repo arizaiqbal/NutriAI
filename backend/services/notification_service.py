@@ -1,6 +1,7 @@
 import smtplib
 import time
 import threading
+from datetime import datetime
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -27,8 +28,14 @@ def _get_groq_client():
 def get_water_reminder(name: str = "") -> str:
     display_name = str(name).strip()
     if display_name:
-        return f"Hi {display_name}, don't forget to drink a glass of water to stay hydrated."
-    return "Don't forget to drink a glass of water to stay hydrated."
+        return (
+            f"Hello {display_name}, wellness tip of the day: pair each meal with a glass of water "
+            "and a short 5-minute walk for better energy and digestion."
+        )
+    return (
+        "Wellness tip of the day: pair each meal with a glass of water "
+        "and a short 5-minute walk for better energy and digestion."
+    )
 
 
 def send_email(to_email, subject, body):
@@ -50,7 +57,7 @@ def send_email(to_email, subject, body):
         server.send_message(msg)
         server.quit()
         print(f"[EMAIL] Email sent to {to_email}", flush=True)
-        return True, f"Email sent to {to_email}"
+        return True, "Email notification sent successfully."
     except Exception as e:
         message = f"Email failed: {e}"
         print(f"[EMAIL] {message}", flush=True)
@@ -62,15 +69,18 @@ def send_demo_notification(user: dict):
     goal = user.get("goal", "maintenance")
     calories = user.get("daily_calories", "your")
     body = (
-        f"Hi {name},\n\n"
-        "This is your NutriBot demo notification.\n"
-        f"Goal: {goal}\n"
-        f"Daily calorie target: {calories} kcal\n\n"
-        "Water reminder: please drink a glass of water now.\n"
-        "Meal reminder: check your NutriBot meal plan and choose a balanced meal for your goal.\n\n"
-        "Regards,\nNutriBot"
+        f"Dear {name},\n\n"
+        "Welcome back to NutriBot.\n\n"
+        "Here is your current profile summary:\n"
+        f"- Goal: {goal}\n"
+        f"- Daily calorie target: {calories} kcal\n\n"
+        "Recommended actions for today:\n"
+        "1. Follow your personalized meal plan for balanced intake.\n"
+        "2. Maintain hydration throughout the day.\n"
+        "3. Record your meals in the Nutrition Log for accurate tracking.\n\n"
+        "Sincerely,\nNutriBot Support"
     )
-    return send_email(user["email"], "NutriBot Water and Meal Reminder", body)
+    return send_email(user["email"], "NutriBot Login Nutrition Reminder", body)
 
 
 def send_registration_notification(user: dict):
@@ -81,40 +91,83 @@ def send_registration_notification(user: dict):
     bmi_category = user.get("bmi_category", "N/A")
 
     body = (
-        f"Hi {name},\n\n"
-        "Welcome to NutriBot! Your profile has been registered successfully.\n\n"
-        f"Goal: {goal}\n"
-        f"Daily calorie target: {calories} kcal\n"
-        f"BMI: {bmi} ({bmi_category})\n\n"
-        "Hydration reminder: drink a glass of water now and try to stay consistent through the day.\n"
-        "Meal reminder: check your personalized meal plan in NutriBot before your next meal.\n\n"
-        "Regards,\nNutriBot"
+        f"Dear {name},\n\n"
+        "Your NutriBot profile has been created successfully.\n\n"
+        "Registered health summary:\n"
+        f"- Goal: {goal}\n"
+        f"- Daily calorie target: {calories} kcal\n"
+        f"- BMI: {bmi} ({bmi_category})\n\n"
+        "Next steps:\n"
+        "1. Generate your 7-day meal plan.\n"
+        "2. Review your grocery list generated from the plan.\n"
+        "3. Log meals daily to track calorie and macronutrient intake.\n\n"
+        "Sincerely,\nNutriBot Support"
     )
-    return send_email(user["email"], "NutriBot Registration and Water Reminder", body)
+    return send_email(user["email"], "NutriBot Registration Confirmation", body)
+
+
+def _goal_daily_suggestion(goal: str) -> str:
+    normalized = str(goal or "maintenance").strip().lower()
+    if normalized == "loss":
+        return (
+            "Prioritize high-fiber vegetables and lean protein in your next two meals, "
+            "and avoid sugar-sweetened drinks for the rest of today."
+        )
+    if normalized == "gain":
+        return (
+            "Add one calorie-dense but balanced snack (for example yogurt with nuts or "
+            "banana with peanut butter) to support healthy weight gain."
+        )
+    return (
+        "Keep your meals balanced by including protein, complex carbohydrates, and "
+        "vegetables in each main meal."
+    )
+
+
+def build_daily_nutrition_guidance(user: dict) -> str:
+    name = user.get("name", "User")
+    goal = user.get("goal", "maintenance")
+    calories = user.get("daily_calories", "N/A")
+    protein = user.get("protein_g", "N/A")
+    carbs = user.get("carbs_g", "N/A")
+    fat = user.get("fat_g", "N/A")
+    today = datetime.now().strftime("%A")
+    suggestion = _goal_daily_suggestion(goal)
+
+    return (
+        f"Dear {name},\n\n"
+        f"This is your NutriBot daily nutrition guidance for {today}.\n\n"
+        "Your current targets:\n"
+        f"- Goal: {goal}\n"
+        f"- Daily calories: {calories} kcal\n"
+        f"- Protein target: {protein} g\n"
+        f"- Carbohydrate target: {carbs} g\n"
+        f"- Fat target: {fat} g\n\n"
+        f"Today's suggestion:\n{suggestion}\n\n"
+        "Please remember to stay hydrated and log your meals in NutriBot.\n\n"
+        "Sincerely,\nNutriBot Support"
+    )
 
 
 def send_daily_meal_reminder():
     supabase = _get_supabase_client()
-    groq_client = _get_groq_client()
     users = supabase.table("users").select("*").execute()
     for user in users.data:
-        response = groq_client.chat.completions.create(
-            model="llama3-8b-8192",
-            messages=[{
-                "role": "user",
-                "content": f"Write a short friendly daily nutrition reminder for {user['name']} whose goal is {user['goal']} and daily calorie target is {user['daily_calories']} kcal. Keep it under 5 lines."
-            }]
-        )
-        body = response.choices[0].message.content
-        send_email(user['email'], "NutriBot Daily Reminder", body)
+        body = build_daily_nutrition_guidance(user)
+        send_email(user['email'], "NutriBot Daily Nutrition Guidance", body)
 
 
 def send_water_reminder():
     supabase = _get_supabase_client()
     users = supabase.table("users").select("email, name").execute()
     for user in users.data:
-        body = f"Hi {user['name']}! Reminder: Have you had enough water today? Aim for 8 glasses (2 liters) daily. Staying hydrated helps with metabolism and energy levels!"
-        send_email(user['email'], "NutriBot Water Reminder", body)
+        body = (
+            f"Dear {user['name']},\n\n"
+            "This is your hydration reminder from NutriBot.\n"
+            "Please aim for regular water intake during the day (approximately 2 liters, unless advised otherwise by your clinician).\n\n"
+            "Sincerely,\nNutriBot Support"
+        )
+        send_email(user['email'], "NutriBot Hydration Reminder", body)
 
 
 def start_scheduler():

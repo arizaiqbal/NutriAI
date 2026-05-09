@@ -264,6 +264,7 @@ def build_backtracking_meal_plan(
     target = int(daily_calorie_target or 2000)
     used_counts = {}
     weekly_plan = []
+    used_day_signatures = set()
 
     def max_uses_for(recipe):
         slot_count = max(len(by_slot[recipe["meal_type"]]), 1)
@@ -274,6 +275,9 @@ def build_backtracking_meal_plan(
 
     def search_day(day_index, slot_index, current_day, calories, best_match):
         if slot_index == len(MEAL_SLOTS):
+            day_signature = tuple(meal["name"] for meal in current_day)
+            if day_signature in used_day_signatures:
+                return False
             difference = abs(calories - target)
             score = difference + sum(recipe_penalty(recipe) for recipe in current_day)
             if best_match["score"] is None or score < best_match["score"]:
@@ -283,7 +287,9 @@ def build_backtracking_meal_plan(
             return abs(calories - target) <= tolerance
 
         slot = MEAL_SLOTS[slot_index]
-        candidates = sorted(
+        # Rotate candidates by day so backtracking doesn't keep choosing
+        # the exact same strong-first ordering every day.
+        ranked_candidates = sorted(
             by_slot[slot],
             key=lambda r: (
                 abs((calories + int(r["calories"])) - ((slot_index + 1) * target / len(MEAL_SLOTS))),
@@ -291,6 +297,8 @@ def build_backtracking_meal_plan(
                 -int(r.get("nutrition_score", 0)),
             ),
         )
+        rotate_by = day_index % max(len(ranked_candidates), 1)
+        candidates = ranked_candidates[rotate_by:] + ranked_candidates[:rotate_by]
 
         for recipe in candidates:
             if used_counts.get(recipe["name"], 0) >= max_uses_for(recipe):
@@ -331,6 +339,7 @@ def build_backtracking_meal_plan(
             }
 
         total = sum(int(meal["calories"]) for meal in day_plan)
+        used_day_signatures.add(tuple(meal["name"] for meal in day_plan))
         weekly_plan.append({
             "day": day,
             "total_calories": total,
@@ -350,11 +359,7 @@ def format_meal_plan(plan_result):
     if not plan_result.get("success"):
         return plan_result.get("error", "Meal plan could not be generated.")
 
-    lines = [
-        "Algorithm Used: Backtracking Search",
-        f"Target: {plan_result['target_calories']} kcal/day",
-        "",
-    ]
+    lines = [f"Target: {plan_result['target_calories']} kcal/day", ""]
 
     for day in plan_result["plan"]:
         lines.append(f"Day {day['day']} - Total: {day['total_calories']} kcal")

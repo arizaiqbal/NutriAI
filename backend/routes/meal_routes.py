@@ -7,7 +7,10 @@ from backend.services.search_service import (
     format_meal_plan,
     knapsack_grocery,
 )
-from backend.services.groq_service import ask_groq_with_context
+from backend.services.spoonacular_service import (
+    build_ranked_recipe_suggestions,
+    spoonacular_configured,
+)
 from backend.services.supabase_service import (
     get_user_by_email,
     save_meal_plan,
@@ -15,8 +18,88 @@ from backend.services.supabase_service import (
 )
 import json
 from datetime import date
+from collections import Counter
 
 meal_bp = Blueprint("meal", __name__)
+
+INGREDIENT_PROFILES = {
+    "chicken": {"category": "Proteins", "calories": 165, "nutrition_score": 88},
+    "eggs": {"category": "Proteins", "calories": 155, "nutrition_score": 84},
+    "tuna": {"category": "Proteins", "calories": 132, "nutrition_score": 85},
+    "salmon": {"category": "Proteins", "calories": 208, "nutrition_score": 92},
+    "tofu": {"category": "Proteins", "calories": 76, "nutrition_score": 82},
+    "paneer": {"category": "Proteins", "calories": 265, "nutrition_score": 76},
+    "lentils": {"category": "Grains/Carbs", "calories": 116, "nutrition_score": 86},
+    "chickpeas": {"category": "Grains/Carbs", "calories": 164, "nutrition_score": 84},
+    "quinoa": {"category": "Grains/Carbs", "calories": 120, "nutrition_score": 87},
+    "brown rice": {"category": "Grains/Carbs", "calories": 111, "nutrition_score": 80},
+    "oats": {"category": "Grains/Carbs", "calories": 389, "nutrition_score": 83},
+    "sweet potato": {"category": "Vegetables", "calories": 86, "nutrition_score": 85},
+    "broccoli": {"category": "Vegetables", "calories": 34, "nutrition_score": 89},
+    "spinach": {"category": "Vegetables", "calories": 23, "nutrition_score": 90},
+    "carrots": {"category": "Vegetables", "calories": 41, "nutrition_score": 84},
+    "cucumber": {"category": "Vegetables", "calories": 16, "nutrition_score": 80},
+    "tomatoes": {"category": "Vegetables", "calories": 18, "nutrition_score": 82},
+    "apple": {"category": "Fruits", "calories": 52, "nutrition_score": 80},
+    "banana": {"category": "Fruits", "calories": 89, "nutrition_score": 78},
+    "berries": {"category": "Fruits", "calories": 57, "nutrition_score": 88},
+    "orange": {"category": "Fruits", "calories": 47, "nutrition_score": 79},
+    "greek yogurt": {"category": "Dairy", "calories": 59, "nutrition_score": 82},
+    "milk": {"category": "Dairy", "calories": 61, "nutrition_score": 75},
+    "cottage cheese": {"category": "Dairy", "calories": 98, "nutrition_score": 84},
+    "olive oil": {"category": "Condiments/Spices", "calories": 119, "nutrition_score": 68},
+    "peanut butter": {"category": "Condiments/Spices", "calories": 588, "nutrition_score": 65},
+}
+
+
+def _build_grocery_candidates_from_plan(plan_json: dict):
+    algorithm_plan = plan_json.get("algorithm_plan", {})
+    weekly_days = algorithm_plan.get("plan", [])
+    ingredient_counts = Counter()
+
+    for day in weekly_days:
+        for meal in day.get("meals", []):
+            for ingredient in meal.get("ingredients", []):
+                ingredient_counts[str(ingredient).strip().lower()] += 1
+
+    candidates = []
+    for ingredient, count in ingredient_counts.items():
+        profile = INGREDIENT_PROFILES.get(
+            ingredient,
+            {"category": "Other", "calories": 90, "nutrition_score": 60},
+        )
+        candidates.append(
+            {
+                "name": ingredient.title(),
+                "category": profile["category"],
+                "quantity_estimate": f"{count} unit(s)",
+                "calories": int(profile["calories"]),
+                "nutrition_score": int(profile["nutrition_score"]),
+            }
+        )
+    return candidates
+
+
+def _format_grouped_grocery_list(candidates, optimized):
+    grouped = {}
+    for item in candidates:
+        grouped.setdefault(item["category"], []).append(item)
+
+    lines = ["Complete ingredients from your weekly meal plan:"]
+    for category in ["Proteins", "Vegetables", "Fruits", "Grains/Carbs", "Dairy", "Condiments/Spices", "Other"]:
+        items = grouped.get(category, [])
+        if not items:
+            continue
+        lines.append(f"- {category}:")
+        for item in sorted(items, key=lambda row: row["name"]):
+            lines.append(f"  - {item['name']} ({item['quantity_estimate']})")
+
+    lines.extend(["", "Priority picks for your calorie target:"])
+    for item in optimized:
+        lines.append(
+            f"- {item['name']} ({item['calories']} kcal, nutrition score {item['nutrition_score']})"
+        )
+    return "\n".join(lines)
 
 
 @meal_bp.route("/generate", methods=["POST"])
@@ -108,8 +191,20 @@ def suggest_from_ingredients():
     if not user:
         return jsonify({"error": "User not found"}), 404
 
-    ranked = best_first_search(ingredients, RECIPE_CATALOG, limit=5)
-    lines = ["Algorithm Used: Best-First Search", ""]
+    source = "Local Catalog"
+    algorithm = "Best-First Search"
+    ranked = []
+    if spoonacular_configured():
+        try:
+            ranked = build_ranked_recipe_suggestions(ingredients, limit=5)
+            source = "Spoonacular API"
+        except Exception:
+            ranked = []
+
+    if not ranked:
+        ranked = best_first_search(ingredients, RECIPE_CATALOG, limit=5)
+
+    lines = [f"Data Source: {source}", ""]
     for recipe in ranked[:3]:
         matched = ", ".join(recipe["matched_ingredients"]) or "none"
         missing = ", ".join(recipe["missing_ingredients"][:4]) or "none"
@@ -120,7 +215,8 @@ def suggest_from_ingredients():
         )
 
     return jsonify({
-        "algorithm": "Best-First Search",
+        "algorithm": algorithm,
+        "source": source,
         "suggestions": "\n".join(lines),
         "recipes": ranked,
     }), 200
@@ -130,8 +226,7 @@ def suggest_from_ingredients():
 def generate_grocery_list():
     """
     Generates a grocery list based on the user's latest meal plan.
-    In Phase 5 this will use Knapsack DP for optimization.
-    For now uses Groq.
+    Uses Knapsack DP to optimize priority items under calorie budget.
 
     Expects JSON body:
     {
@@ -151,19 +246,26 @@ def generate_grocery_list():
     if not plan:
         return jsonify({"error": "No meal plan found. Generate a meal plan first."}), 404
 
-    plan_text = json.loads(plan["plan_json"]).get("text", "")
+    plan_json = json.loads(plan["plan_json"])
+    candidates = _build_grocery_candidates_from_plan(plan_json)
+    if not candidates:
+        return jsonify({"error": "Could not extract ingredients from meal plan."}), 422
 
-    prompt = f"""
-    Based on this 7-day meal plan:
-    {plan_text}
-    
-    Generate a complete grocery list organized by category:
-    (Proteins, Vegetables, Fruits, Grains/Carbs, Dairy, Condiments/Spices)
-    Include estimated quantities for one person for one week.
-    """
+    calorie_budget = int(user.get("daily_calories", 2000))
+    optimized = knapsack_grocery(candidates, calorie_budget)
+    grocery_text = _format_grouped_grocery_list(candidates, optimized["selected_items"])
 
-    grocery_list = ask_groq_with_context(prompt, user)
-    return jsonify({"grocery_list": grocery_list}), 200
+    return jsonify(
+        {
+            "algorithm": optimized["algorithm"],
+            "calorie_budget": calorie_budget,
+            "total_calories": optimized["total_calories"],
+            "total_nutrition_score": optimized["total_nutrition_score"],
+            "optimized_items": optimized["selected_items"],
+            "all_items": candidates,
+            "grocery_list": grocery_text,
+        }
+    ), 200
 
 
 
