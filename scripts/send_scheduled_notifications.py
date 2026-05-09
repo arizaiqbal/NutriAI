@@ -1,7 +1,13 @@
 import os
+import sys
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+
+# FOR GITHUB ACTIONS IMPORTS
+sys.path.append(
+    os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+)
 
 from dotenv import load_dotenv
 from supabase import create_client
@@ -46,16 +52,23 @@ def main():
     users = response.data or []
 
     print(f"[NOTIFICATIONS] Found {len(users)} users")
+
     for user in users:
         email = user.get("email")
+
         if not email:
             continue
-        send_email(
-            email,
-            "NutriBot Daily Nutrition Guidance",
-            build_reminder(user),
-        )
-        print(f"[NOTIFICATIONS] Sent reminder to {email}")
+
+        try:
+            send_email(
+                email,
+                "NutriBot Daily Nutrition Guidance",
+                build_reminder(user),
+            )
+            print(f"[NOTIFICATIONS] Sent reminder to {email}")
+
+        except Exception as e:
+            print(f"[ERROR] Failed for {email}: {e}")
 
 
 if __name__ == "__main__":
