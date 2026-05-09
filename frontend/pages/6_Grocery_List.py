@@ -1,13 +1,16 @@
 import os
 import sys
 
-import requests
 import streamlit as st
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-from frontend.components.api_client import optimize_grocery_items
-from frontend.components.ui_helpers import apply_theme, show_card
+from frontend.components.api_client import (
+    generate_grocery_list,
+    get_latest_meal_plan,
+    optimize_grocery_items,
+)
+from frontend.components.ui_helpers import apply_theme, require_login, show_card, show_error, show_success
 
 
 st.set_page_config(page_title="Grocery List - NutriAI", page_icon="🛒")
@@ -18,21 +21,43 @@ apply_theme(
     badge="Pantry Pop",
 )
 
-show_card("Generate from meal plan", "Paste a plan to get a grocery list, or use the optimizer below to choose the best items inside a calorie budget.")
+show_card("Generate from saved meal plan", "Load your latest saved meal plan and generate a grocery list automatically, or use the optimizer below to choose the best items inside a calorie budget.")
+user = require_login()
+if not user:
+    st.stop()
 
-meal_plan = st.text_area("Paste your meal plan here:", height=200)
+if "grocery_page_meal_plan" not in st.session_state:
+    st.session_state["grocery_page_meal_plan"] = ""
 
-if st.button("Generate Grocery List", use_container_width=True):
-    if meal_plan:
-        with st.spinner("Generating..."):
-            response = requests.post(
-                "http://localhost:5000/api/meal/grocery-list",
-                json={"meal_plan": meal_plan},
-            )
-        if response.ok:
-            show_card("Your grocery list", response.json()["grocery_list"])
-    else:
-        st.warning("Please paste a meal plan first.")
+if "grocery_page_list" not in st.session_state:
+    st.session_state["grocery_page_list"] = ""
+
+col1, col2 = st.columns(2)
+with col1:
+    if st.button("Load Latest Meal Plan", use_container_width=True):
+        with st.spinner("Loading your latest meal plan..."):
+            result = get_latest_meal_plan(user["email"])
+        if "error" in result:
+            show_error(result.get("error", "No saved meal plan found."))
+        else:
+            st.session_state["grocery_page_meal_plan"] = result.get("meal_plan", "")
+            show_success("Latest meal plan loaded.")
+
+with col2:
+    if st.button("Generate Grocery List Automatically", use_container_width=True):
+        with st.spinner("Generating grocery list from your latest saved meal plan..."):
+            result = generate_grocery_list(user["email"])
+        if "error" in result:
+            show_error(result["error"])
+        else:
+            st.session_state["grocery_page_list"] = result.get("grocery_list", "")
+            show_success("Grocery list generated automatically.")
+
+if st.session_state["grocery_page_meal_plan"]:
+    show_card("Latest saved meal plan", st.session_state["grocery_page_meal_plan"])
+
+if st.session_state["grocery_page_list"]:
+    show_card("Your grocery list", st.session_state["grocery_page_list"])
 
 st.divider()
 show_card("Optimize Grocery List", "Enter candidate items and Knapsack DP will pick the highest nutrition-score set within your calorie budget.")
