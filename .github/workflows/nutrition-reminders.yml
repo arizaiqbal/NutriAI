@@ -2,9 +2,19 @@ name: NutriBot Scheduled Email Notifications
 
 on:
   schedule:
-    - cron: "0 8 * * *"
-    - cron: "0 */2 * * *"
+    - cron: "0 8 * * *"    # Daily at 8 AM UTC — nutrition guidance
+    - cron: "0 */2 * * *"  # Every 2 hours — water/hydration reminder
   workflow_dispatch:
+    inputs:
+      notification_type:
+        description: "Type of notification to send"
+        required: false
+        default: "all"
+        type: choice
+        options:
+          - all
+          - daily
+          - water
 
 jobs:
   send-reminders:
@@ -24,6 +34,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Determine notification type
+        id: notify_type
+        run: |
+          # workflow_dispatch uses the input; scheduled runs use cron time
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "type=${{ github.event.inputs.notification_type }}" >> $GITHUB_OUTPUT
+          elif [ "$(date -u +%H)" = "08" ]; then
+            echo "type=daily" >> $GITHUB_OUTPUT
+          else
+            echo "type=water" >> $GITHUB_OUTPUT
+          fi
+
       - name: Send scheduled notifications
         env:
           PYTHONPATH: ${{ github.workspace }}
@@ -31,4 +53,4 @@ jobs:
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
-        run: python scripts/send_scheduled_notifications.py
+        run: python scripts/send_scheduled_notifications.py --type ${{ steps.notify_type.outputs.type }}

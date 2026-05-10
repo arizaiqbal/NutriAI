@@ -1,6 +1,7 @@
 import os
 import sys
 import smtplib
+import argparse
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -11,7 +12,10 @@ sys.path.append(
 
 from dotenv import load_dotenv
 from supabase import create_client
-from backend.services.notification_service import build_daily_nutrition_guidance
+from backend.services.notification_service import (
+    build_daily_nutrition_guidance,
+    get_water_reminder,
+)
 
 
 load_dotenv()
@@ -39,11 +43,52 @@ def send_email(to_email, subject, body):
         server.send_message(message)
 
 
-def build_reminder(user):
-    return build_daily_nutrition_guidance(user)
+def send_daily_reminders(users):
+    print(f"[NOTIFICATIONS] Sending daily nutrition guidance to {len(users)} users")
+    for user in users:
+        email = user.get("email")
+        if not email:
+            continue
+        try:
+            body = build_daily_nutrition_guidance(user)
+            send_email(email, "NutriBot Daily Nutrition Guidance", body)
+            print(f"[NOTIFICATIONS] Sent daily guidance to {email}")
+        except Exception as e:
+            print(f"[ERROR] Failed daily guidance for {email}: {e}")
+
+
+def send_water_reminders(users):
+    print(f"[NOTIFICATIONS] Sending water reminders to {len(users)} users")
+    for user in users:
+        email = user.get("email")
+        name = user.get("name", "")
+        if not email:
+            continue
+        try:
+            body = (
+                f"Dear {name},\n\n"
+                "This is your hydration reminder from NutriBot.\n"
+                "Please aim for regular water intake during the day "
+                "(approximately 2 liters, unless advised otherwise by your clinician).\n\n"
+                f"{get_water_reminder(name)}\n\n"
+                "Sincerely,\nNutriBot Support"
+            )
+            send_email(email, "NutriBot Hydration Reminder", body)
+            print(f"[NOTIFICATIONS] Sent water reminder to {email}")
+        except Exception as e:
+            print(f"[ERROR] Failed water reminder for {email}: {e}")
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--type",
+        choices=["daily", "water", "all"],
+        default=os.getenv("NOTIFICATION_TYPE", "all"),
+        help="Type of notification to send: daily, water, or all",
+    )
+    args = parser.parse_args()
+
     if not SUPABASE_URL or not SUPABASE_KEY:
         raise RuntimeError("SUPABASE_URL or SUPABASE_KEY is missing")
 
@@ -51,24 +96,13 @@ def main():
     response = client.table("users").select("*").execute()
     users = response.data or []
 
-    print(f"[NOTIFICATIONS] Found {len(users)} users")
+    print(f"[NOTIFICATIONS] Found {len(users)} users — type: {args.type}")
 
-    for user in users:
-        email = user.get("email")
+    if args.type in ("daily", "all"):
+        send_daily_reminders(users)
 
-        if not email:
-            continue
-
-        try:
-            send_email(
-                email,
-                "NutriBot Daily Nutrition Guidance",
-                build_reminder(user),
-            )
-            print(f"[NOTIFICATIONS] Sent reminder to {email}")
-
-        except Exception as e:
-            print(f"[ERROR] Failed for {email}: {e}")
+    if args.type in ("water", "all"):
+        send_water_reminders(users)
 
 
 if __name__ == "__main__":
