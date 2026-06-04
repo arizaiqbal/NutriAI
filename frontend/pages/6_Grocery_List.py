@@ -10,7 +10,7 @@ from frontend.components.api_client import (
     get_latest_meal_plan,
     optimize_grocery_items,
 )
-from frontend.components.ui_helpers import apply_theme, require_login, show_card, show_error, show_success
+from frontend.components.ui_helpers import apply_theme, require_login, show_card, show_error, show_macro_charts, show_success
 
 
 st.set_page_config(page_title="Grocery List - NutriAI", page_icon="🛒")
@@ -25,6 +25,14 @@ show_card("Generate from saved meal plan", "Load your latest saved meal plan and
 user = require_login()
 if not user:
     st.stop()
+
+show_macro_charts(
+    user.get("protein_g", 0),
+    user.get("carbs_g", 0),
+    user.get("fat_g", 0),
+    title="Shopping Macro Guide",
+    subtitle="Keep these targets in view while building or optimizing your grocery list.",
+)
 
 if "grocery_page_meal_plan" not in st.session_state:
     st.session_state["grocery_page_meal_plan"] = ""

@@ -7,7 +7,7 @@ import streamlit as st
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
 from frontend.components.api_client import get_meal_health_score
-from frontend.components.ui_helpers import apply_theme, show_card, show_feature_grid
+from frontend.components.ui_helpers import apply_theme, show_card, show_feature_grid, show_nutrition_snapshot
 
 
 st.set_page_config(page_title="HealthyOrNot - NutriAI", page_icon="🌈")
@@ -86,3 +86,10 @@ if st.button("Get Health Score", use_container_width=True):
             ("Carbs", f"{carbs} g"),
             ("Fat", f"{fat} g"),
         ])
+        show_nutrition_snapshot(
+            cal,
+            protein,
+            carbs,
+            fat,
+            title="Health Score Nutrition Visual",
+        )

@@ -5,7 +5,7 @@ import streamlit as st
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from frontend.components.ui_helpers import apply_theme, show_card, show_feature_grid
+from frontend.components.ui_helpers import apply_theme, show_card, show_feature_grid, show_macro_charts
 
 
 st.set_page_config(
@@ -73,6 +73,13 @@ with col2:
         show_card(
             "Current snapshot",
             f"Logged in as <strong>{user.get('name', 'User')}</strong><br>Goal: <strong>{user.get('goal', '').capitalize()}</strong><br>Daily target: <strong>{user.get('daily_calories', 0)} kcal</strong>",
+        )
+        show_macro_charts(
+            user.get("protein_g", 0),
+            user.get("carbs_g", 0),
+            user.get("fat_g", 0),
+            title="Today's Macro Target",
+            subtitle="A quick visual balance of your daily nutrition targets.",
         )
     else:
         show_card(

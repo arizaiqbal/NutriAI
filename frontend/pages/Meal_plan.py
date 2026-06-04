@@ -12,7 +12,7 @@ from frontend.components.api_client import (
     optimize_grocery_items,
     suggest_from_ingredients,
 )
-from frontend.components.ui_helpers import apply_theme, require_login, show_card, show_error, show_feature_grid, show_success
+from frontend.components.ui_helpers import apply_theme, require_login, show_card, show_error, show_feature_grid, show_macro_charts, show_success
 
 
 st.set_page_config(page_title="Meal Plan - NutriAI", page_icon="🍽️")
@@ -32,6 +32,13 @@ show_feature_grid([
     ("Goal", user.get("goal", "").capitalize()),
     ("Restrictions", user.get("restrictions", "none").capitalize()),
 ])
+show_macro_charts(
+    user.get("protein_g", 0),
+    user.get("carbs_g", 0),
+    user.get("fat_g", 0),
+    title="Plan Macro Targets",
+    subtitle="Use this target mix as the visual guide for your weekly meal plan.",
+)
 
 tab_plan, tab_ingredients, tab_grocery = st.tabs([
     "7-Day Meal Plan",

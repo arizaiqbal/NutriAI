@@ -1,0 +1,601 @@
+Product Size,Weight Kgs,Thick MM,Gauges,Category,forecast_month,week_label,week_start_day,week_end_day,weekly_share,predicted_weekly_demand,predicted_monthly_demand,allocation_basis
+"1""",11-12 Kgs,2.35 mm,12,Running,January,Week 1,1,7,0.225806,6.066,26.863,calendar_day_share
+"1""",11-12 Kgs,2.35 mm,12,Running,January,Week 2,8,14,0.225806,6.066,26.863,calendar_day_share
+"1""",11-12 Kgs,2.35 mm,12,Running,January,Week 3,15,21,0.225806,6.066,26.863,calendar_day_share
+"1""",11-12 Kgs,2.35 mm,12,Running,January,Week 4,22,28,0.225806,6.066,26.863,calendar_day_share
+"1""",11-12 Kgs,2.35 mm,12,Running,January,Week 5,29,31,0.096774,2.6,26.863,calendar_day_share
+"1""",13-14 Kgs,2.35 mm,10,Running,January,Week 1,1,7,0.225806,35.549,157.433,calendar_day_share
+"1""",13-14 Kgs,2.35 mm,10,Running,January,Week 2,8,14,0.225806,35.549,157.433,calendar_day_share
+"1""",13-14 Kgs,2.35 mm,10,Running,January,Week 3,15,21,0.225806,35.549,157.433,calendar_day_share
+"1""",13-14 Kgs,2.35 mm,10,Running,January,Week 4,22,28,0.225806,35.549,157.433,calendar_day_share
+"1""",13-14 Kgs,2.35 mm,10,Running,January,Week 5,29,31,0.096774,15.235,157.433,calendar_day_share
+"1""",13-14 Kgs,3.25 mm,10,Running,January,Week 1,1,7,0.225806,0.355,1.574,calendar_day_share
+"1""",13-14 Kgs,3.25 mm,10,Running,January,Week 2,8,14,0.225806,0.355,1.574,calendar_day_share
+"1""",13-14 Kgs,3.25 mm,10,Running,January,Week 3,15,21,0.225806,0.355,1.574,calendar_day_share
+"1""",13-14 Kgs,3.25 mm,10,Running,January,Week 4,22,28,0.225806,0.355,1.574,calendar_day_share
+"1""",13-14 Kgs,3.25 mm,10,Running,January,Week 5,29,31,0.096774,0.152,1.574,calendar_day_share
+"1""",17-18 Kgs,3.25 mm,10,Running,January,Week 1,1,7,0.225806,3.26,14.436,calendar_day_share
+"1""",17-18 Kgs,3.25 mm,10,Running,January,Week 2,8,14,0.225806,3.26,14.436,calendar_day_share
+"1""",17-18 Kgs,3.25 mm,10,Running,January,Week 3,15,21,0.225806,3.26,14.436,calendar_day_share
+"1""",17-18 Kgs,3.25 mm,10,Running,January,Week 4,22,28,0.225806,3.26,14.436,calendar_day_share
+"1""",17-18 Kgs,3.25 mm,10,Running,January,Week 5,29,31,0.096774,1.397,14.436,calendar_day_share
+"1""",7-8 Kgs,1.6 mm,16,Running,January,Week 1,1,7,0.225806,11.932,52.843,calendar_day_share
+"1""",7-8 Kgs,1.6 mm,16,Running,January,Week 2,8,14,0.225806,11.932,52.843,calendar_day_share
+"1""",7-8 Kgs,1.6 mm,16,Running,January,Week 3,15,21,0.225806,11.932,52.843,calendar_day_share
+"1""",7-8 Kgs,1.6 mm,16,Running,January,Week 4,22,28,0.225806,11.932,52.843,calendar_day_share
+"1""",7-8 Kgs,1.6 mm,16,Running,January,Week 5,29,31,0.096774,5.114,52.843,calendar_day_share
+"1""",9-10 Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,50.716,224.601,calendar_day_share
+"1""",9-10 Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,50.716,224.601,calendar_day_share
+"1""",9-10 Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,50.716,224.601,calendar_day_share
+"1""",9-10 Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,50.716,224.601,calendar_day_share
+"1""",9-10 Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,21.736,224.601,calendar_day_share
+"1""",Unknown,Unknown,10,Running,January,Week 1,1,7,0.225806,0.008,0.035,calendar_day_share
+"1""",Unknown,Unknown,10,Running,January,Week 2,8,14,0.225806,0.008,0.035,calendar_day_share
+"1""",Unknown,Unknown,10,Running,January,Week 3,15,21,0.225806,0.008,0.035,calendar_day_share
+"1""",Unknown,Unknown,10,Running,January,Week 4,22,28,0.225806,0.008,0.035,calendar_day_share
+"1""",Unknown,Unknown,10,Running,January,Week 5,29,31,0.096774,0.003,0.035,calendar_day_share
+"1¼""",10-11 Kgs,1.6 mm,16,Running,January,Week 1,1,7,0.225806,11.821,52.35,calendar_day_share
+"1¼""",10-11 Kgs,1.6 mm,16,Running,January,Week 2,8,14,0.225806,11.821,52.35,calendar_day_share
+"1¼""",10-11 Kgs,1.6 mm,16,Running,January,Week 3,15,21,0.225806,11.821,52.35,calendar_day_share
+"1¼""",10-11 Kgs,1.6 mm,16,Running,January,Week 4,22,28,0.225806,11.821,52.35,calendar_day_share
+"1¼""",10-11 Kgs,1.6 mm,16,Running,January,Week 5,29,31,0.096774,5.066,52.35,calendar_day_share
+"1¼""",12-13 Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,21.761,96.371,calendar_day_share
+"1¼""",12-13 Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,21.761,96.371,calendar_day_share
+"1¼""",12-13 Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,21.761,96.371,calendar_day_share
+"1¼""",12-13 Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,21.761,96.371,calendar_day_share
+"1¼""",12-13 Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,9.326,96.371,calendar_day_share
+"1¼""",15-16 Kgs,2.65 mm,12,Running,January,Week 1,1,7,0.225806,15.654,69.327,calendar_day_share
+"1¼""",15-16 Kgs,2.65 mm,12,Running,January,Week 2,8,14,0.225806,15.654,69.327,calendar_day_share
+"1¼""",15-16 Kgs,2.65 mm,12,Running,January,Week 3,15,21,0.225806,15.654,69.327,calendar_day_share
+"1¼""",15-16 Kgs,2.65 mm,12,Running,January,Week 4,22,28,0.225806,15.654,69.327,calendar_day_share
+"1¼""",15-16 Kgs,2.65 mm,12,Running,January,Week 5,29,31,0.096774,6.709,69.327,calendar_day_share
+"1¼""",17-18 Kgs,2.65 mm,12,Running,January,Week 1,1,7,0.225806,0.542,2.401,calendar_day_share
+"1¼""",17-18 Kgs,2.65 mm,12,Running,January,Week 2,8,14,0.225806,0.542,2.401,calendar_day_share
+"1¼""",17-18 Kgs,2.65 mm,12,Running,January,Week 3,15,21,0.225806,0.542,2.401,calendar_day_share
+"1¼""",17-18 Kgs,2.65 mm,12,Running,January,Week 4,22,28,0.225806,0.542,2.401,calendar_day_share
+"1¼""",17-18 Kgs,2.65 mm,12,Running,January,Week 5,29,31,0.096774,0.232,2.401,calendar_day_share
+"1¼""",17-18 Kgs,3 mm,10,Running,January,Week 1,1,7,0.225806,14.913,66.043,calendar_day_share
+"1¼""",17-18 Kgs,3 mm,10,Running,January,Week 2,8,14,0.225806,14.913,66.043,calendar_day_share
+"1¼""",17-18 Kgs,3 mm,10,Running,January,Week 3,15,21,0.225806,14.913,66.043,calendar_day_share
+"1¼""",17-18 Kgs,3 mm,10,Running,January,Week 4,22,28,0.225806,14.913,66.043,calendar_day_share
+"1¼""",17-18 Kgs,3 mm,10,Running,January,Week 5,29,31,0.096774,6.391,66.043,calendar_day_share
+"1¼""",19-20 Kgs,3 mm,10,Running,January,Week 1,1,7,0.225806,3.777,16.725,calendar_day_share
+"1¼""",19-20 Kgs,3 mm,10,Running,January,Week 2,8,14,0.225806,3.777,16.725,calendar_day_share
+"1¼""",19-20 Kgs,3 mm,10,Running,January,Week 3,15,21,0.225806,3.777,16.725,calendar_day_share
+"1¼""",19-20 Kgs,3 mm,10,Running,January,Week 4,22,28,0.225806,3.777,16.725,calendar_day_share
+"1¼""",19-20 Kgs,3 mm,10,Running,January,Week 5,29,31,0.096774,1.619,16.725,calendar_day_share
+"1¼""",21-22 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,0.185,0.821,calendar_day_share
+"1¼""",21-22 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,0.185,0.821,calendar_day_share
+"1¼""",21-22 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,0.185,0.821,calendar_day_share
+"1¼""",21-22 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,0.185,0.821,calendar_day_share
+"1¼""",21-22 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,0.079,0.821,calendar_day_share
+"1¼""",22-23 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,0.104,0.461,calendar_day_share
+"1¼""",22-23 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,0.104,0.461,calendar_day_share
+"1¼""",22-23 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,0.104,0.461,calendar_day_share
+"1¼""",22-23 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,0.104,0.461,calendar_day_share
+"1¼""",22-23 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,0.045,0.461,calendar_day_share
+"1¼""",8-9 Kgs,1.2 mm,18,Running,January,Week 1,1,7,0.225806,0.007,0.029,calendar_day_share
+"1¼""",8-9 Kgs,1.2 mm,18,Running,January,Week 2,8,14,0.225806,0.007,0.029,calendar_day_share
+"1¼""",8-9 Kgs,1.2 mm,18,Running,January,Week 3,15,21,0.225806,0.007,0.029,calendar_day_share
+"1¼""",8-9 Kgs,1.2 mm,18,Running,January,Week 4,22,28,0.225806,0.007,0.029,calendar_day_share
+"1¼""",8-9 Kgs,1.2 mm,18,Running,January,Week 5,29,31,0.096774,0.003,0.029,calendar_day_share
+"1½""",10-11 Kgs,1.6 mm,16,Running,January,Week 1,1,7,0.225806,56.804,251.56,calendar_day_share
+"1½""",10-11 Kgs,1.6 mm,16,Running,January,Week 2,8,14,0.225806,56.804,251.56,calendar_day_share
+"1½""",10-11 Kgs,1.6 mm,16,Running,January,Week 3,15,21,0.225806,56.804,251.56,calendar_day_share
+"1½""",10-11 Kgs,1.6 mm,16,Running,January,Week 4,22,28,0.225806,56.804,251.56,calendar_day_share
+"1½""",10-11 Kgs,1.6 mm,16,Running,January,Week 5,29,31,0.096774,24.345,251.56,calendar_day_share
+"1½""",13-14 Kgs,1.8 mm,14,Running,January,Week 1,1,7,0.225806,0.056,0.249,calendar_day_share
+"1½""",13-14 Kgs,1.8 mm,14,Running,January,Week 2,8,14,0.225806,0.056,0.249,calendar_day_share
+"1½""",13-14 Kgs,1.8 mm,14,Running,January,Week 3,15,21,0.225806,0.056,0.249,calendar_day_share
+"1½""",13-14 Kgs,1.8 mm,14,Running,January,Week 4,22,28,0.225806,0.056,0.249,calendar_day_share
+"1½""",13-14 Kgs,1.8 mm,14,Running,January,Week 5,29,31,0.096774,0.024,0.249,calendar_day_share
+"1½""",13-14 Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,97.263,430.738,calendar_day_share
+"1½""",13-14 Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,97.263,430.738,calendar_day_share
+"1½""",13-14 Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,97.263,430.738,calendar_day_share
+"1½""",13-14 Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,97.263,430.738,calendar_day_share
+"1½""",13-14 Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,41.684,430.738,calendar_day_share
+"1½""",15-16 Kgs,2 mm,12,Running,January,Week 1,1,7,0.225806,0.552,2.444,calendar_day_share
+"1½""",15-16 Kgs,2 mm,12,Running,January,Week 2,8,14,0.225806,0.552,2.444,calendar_day_share
+"1½""",15-16 Kgs,2 mm,12,Running,January,Week 3,15,21,0.225806,0.552,2.444,calendar_day_share
+"1½""",15-16 Kgs,2 mm,12,Running,January,Week 4,22,28,0.225806,0.552,2.444,calendar_day_share
+"1½""",15-16 Kgs,2 mm,12,Running,January,Week 5,29,31,0.096774,0.236,2.444,calendar_day_share
+"1½""",17-18 Kgs,2.65 mm,10,Running,January,Week 1,1,7,0.225806,0.671,2.972,calendar_day_share
+"1½""",17-18 Kgs,2.65 mm,10,Running,January,Week 2,8,14,0.225806,0.671,2.972,calendar_day_share
+"1½""",17-18 Kgs,2.65 mm,10,Running,January,Week 3,15,21,0.225806,0.671,2.972,calendar_day_share
+"1½""",17-18 Kgs,2.65 mm,10,Running,January,Week 4,22,28,0.225806,0.671,2.972,calendar_day_share
+"1½""",17-18 Kgs,2.65 mm,10,Running,January,Week 5,29,31,0.096774,0.288,2.972,calendar_day_share
+"1½""",17-18 Kgs,2.65 mm,11,Running,January,Week 1,1,7,0.225806,9.943,44.033,calendar_day_share
+"1½""",17-18 Kgs,2.65 mm,11,Running,January,Week 2,8,14,0.225806,9.943,44.033,calendar_day_share
+"1½""",17-18 Kgs,2.65 mm,11,Running,January,Week 3,15,21,0.225806,9.943,44.033,calendar_day_share
+"1½""",17-18 Kgs,2.65 mm,11,Running,January,Week 4,22,28,0.225806,9.943,44.033,calendar_day_share
+"1½""",17-18 Kgs,2.65 mm,11,Running,January,Week 5,29,31,0.096774,4.261,44.033,calendar_day_share
+"1½""",20-21 Kgs,2.9 mm,10,Running,January,Week 1,1,7,0.225806,0.029,0.128,calendar_day_share
+"1½""",20-21 Kgs,2.9 mm,10,Running,January,Week 2,8,14,0.225806,0.029,0.128,calendar_day_share
+"1½""",20-21 Kgs,2.9 mm,10,Running,January,Week 3,15,21,0.225806,0.029,0.128,calendar_day_share
+"1½""",20-21 Kgs,2.9 mm,10,Running,January,Week 4,22,28,0.225806,0.029,0.128,calendar_day_share
+"1½""",20-21 Kgs,2.9 mm,10,Running,January,Week 5,29,31,0.096774,0.012,0.128,calendar_day_share
+"1½""",23-24 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,7.39,32.725,calendar_day_share
+"1½""",23-24 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,7.39,32.725,calendar_day_share
+"1½""",23-24 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,7.39,32.725,calendar_day_share
+"1½""",23-24 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,7.39,32.725,calendar_day_share
+"1½""",23-24 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,3.167,32.725,calendar_day_share
+"1½""",25-26 Kgs,4 mm,8,Running,January,Week 1,1,7,0.225806,0.005,0.023,calendar_day_share
+"1½""",25-26 Kgs,4 mm,8,Running,January,Week 2,8,14,0.225806,0.005,0.023,calendar_day_share
+"1½""",25-26 Kgs,4 mm,8,Running,January,Week 3,15,21,0.225806,0.005,0.023,calendar_day_share
+"1½""",25-26 Kgs,4 mm,8,Running,January,Week 4,22,28,0.225806,0.005,0.023,calendar_day_share
+"1½""",25-26 Kgs,4 mm,8,Running,January,Week 5,29,31,0.096774,0.002,0.023,calendar_day_share
+"2""",13-14 Kgs,1.6 mm,16,Running,January,Week 1,1,7,0.225806,33.316,147.541,calendar_day_share
+"2""",13-14 Kgs,1.6 mm,16,Running,January,Week 2,8,14,0.225806,33.316,147.541,calendar_day_share
+"2""",13-14 Kgs,1.6 mm,16,Running,January,Week 3,15,21,0.225806,33.316,147.541,calendar_day_share
+"2""",13-14 Kgs,1.6 mm,16,Running,January,Week 4,22,28,0.225806,33.316,147.541,calendar_day_share
+"2""",13-14 Kgs,1.6 mm,16,Running,January,Week 5,29,31,0.096774,14.278,147.541,calendar_day_share
+"2""",16-17 Kgs,2.0 mm,14,Running,January,Week 1,1,7,0.225806,99.123,438.974,calendar_day_share
+"2""",16-17 Kgs,2.0 mm,14,Running,January,Week 2,8,14,0.225806,99.123,438.974,calendar_day_share
+"2""",16-17 Kgs,2.0 mm,14,Running,January,Week 3,15,21,0.225806,99.123,438.974,calendar_day_share
+"2""",16-17 Kgs,2.0 mm,14,Running,January,Week 4,22,28,0.225806,99.123,438.974,calendar_day_share
+"2""",16-17 Kgs,2.0 mm,14,Running,January,Week 5,29,31,0.096774,42.481,438.974,calendar_day_share
+"2""",16-17½ Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,0.007,0.033,calendar_day_share
+"2""",16-17½ Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,0.007,0.033,calendar_day_share
+"2""",16-17½ Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,0.007,0.033,calendar_day_share
+"2""",16-17½ Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,0.007,0.033,calendar_day_share
+"2""",16-17½ Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,0.003,0.033,calendar_day_share
+"2""",20-21 Kgs,2.35 mm,12,Running,January,Week 1,1,7,0.225806,39.908,176.734,calendar_day_share
+"2""",20-21 Kgs,2.35 mm,12,Running,January,Week 2,8,14,0.225806,39.908,176.734,calendar_day_share
+"2""",20-21 Kgs,2.35 mm,12,Running,January,Week 3,15,21,0.225806,39.908,176.734,calendar_day_share
+"2""",20-21 Kgs,2.35 mm,12,Running,January,Week 4,22,28,0.225806,39.908,176.734,calendar_day_share
+"2""",20-21 Kgs,2.35 mm,12,Running,January,Week 5,29,31,0.096774,17.103,176.734,calendar_day_share
+"2""",25-26 Kgs,3.25 mm,10,Running,January,Week 1,1,7,0.225806,39.802,176.267,calendar_day_share
+"2""",25-26 Kgs,3.25 mm,10,Running,January,Week 2,8,14,0.225806,39.802,176.267,calendar_day_share
+"2""",25-26 Kgs,3.25 mm,10,Running,January,Week 3,15,21,0.225806,39.802,176.267,calendar_day_share
+"2""",25-26 Kgs,3.25 mm,10,Running,January,Week 4,22,28,0.225806,39.802,176.267,calendar_day_share
+"2""",25-26 Kgs,3.25 mm,10,Running,January,Week 5,29,31,0.096774,17.058,176.267,calendar_day_share
+"2""",29-30 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,7.464,33.053,calendar_day_share
+"2""",29-30 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,7.464,33.053,calendar_day_share
+"2""",29-30 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,7.464,33.053,calendar_day_share
+"2""",29-30 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,7.464,33.053,calendar_day_share
+"2""",29-30 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,3.199,33.053,calendar_day_share
+"2""",32-34 Kgs,4 mm,8,Running,January,Week 1,1,7,0.225806,9.745,43.158,calendar_day_share
+"2""",32-34 Kgs,4 mm,8,Running,January,Week 2,8,14,0.225806,9.745,43.158,calendar_day_share
+"2""",32-34 Kgs,4 mm,8,Running,January,Week 3,15,21,0.225806,9.745,43.158,calendar_day_share
+"2""",32-34 Kgs,4 mm,8,Running,January,Week 4,22,28,0.225806,9.745,43.158,calendar_day_share
+"2""",32-34 Kgs,4 mm,8,Running,January,Week 5,29,31,0.096774,4.177,43.158,calendar_day_share
+"2""",32-34 Kgs,5 mm,5,Running,January,Week 1,1,7,0.225806,0.272,1.206,calendar_day_share
+"2""",32-34 Kgs,5 mm,5,Running,January,Week 2,8,14,0.225806,0.272,1.206,calendar_day_share
+"2""",32-34 Kgs,5 mm,5,Running,January,Week 3,15,21,0.225806,0.272,1.206,calendar_day_share
+"2""",32-34 Kgs,5 mm,5,Running,January,Week 4,22,28,0.225806,0.272,1.206,calendar_day_share
+"2""",32-34 Kgs,5 mm,5,Running,January,Week 5,29,31,0.096774,0.117,1.206,calendar_day_share
+"2""",9½-10 Kgs,1.2 mm,18,Running,January,Week 1,1,7,0.225806,0.307,1.36,calendar_day_share
+"2""",9½-10 Kgs,1.2 mm,18,Running,January,Week 2,8,14,0.225806,0.307,1.36,calendar_day_share
+"2""",9½-10 Kgs,1.2 mm,18,Running,January,Week 3,15,21,0.225806,0.307,1.36,calendar_day_share
+"2""",9½-10 Kgs,1.2 mm,18,Running,January,Week 4,22,28,0.225806,0.307,1.36,calendar_day_share
+"2""",9½-10 Kgs,1.2 mm,18,Running,January,Week 5,29,31,0.096774,0.132,1.36,calendar_day_share
+"2""",Unknown,Unknown,Unknown,Unknown,January,Week 1,1,7,0.225806,0.043,0.19,calendar_day_share
+"2""",Unknown,Unknown,Unknown,Unknown,January,Week 2,8,14,0.225806,0.043,0.19,calendar_day_share
+"2""",Unknown,Unknown,Unknown,Unknown,January,Week 3,15,21,0.225806,0.043,0.19,calendar_day_share
+"2""",Unknown,Unknown,Unknown,Unknown,January,Week 4,22,28,0.225806,0.043,0.19,calendar_day_share
+"2""",Unknown,Unknown,Unknown,Unknown,January,Week 5,29,31,0.096774,0.018,0.19,calendar_day_share
+"2½""",10-11 Kgs,Unknown,Unknown,Running,January,Week 1,1,7,0.225806,0.532,2.355,calendar_day_share
+"2½""",10-11 Kgs,Unknown,Unknown,Running,January,Week 2,8,14,0.225806,0.532,2.355,calendar_day_share
+"2½""",10-11 Kgs,Unknown,Unknown,Running,January,Week 3,15,21,0.225806,0.532,2.355,calendar_day_share
+"2½""",10-11 Kgs,Unknown,Unknown,Running,January,Week 4,22,28,0.225806,0.532,2.355,calendar_day_share
+"2½""",10-11 Kgs,Unknown,Unknown,Running,January,Week 5,29,31,0.096774,0.228,2.355,calendar_day_share
+"2½""",16-17 Kgs,1.6 mm,16,Running,January,Week 1,1,7,0.225806,12.471,55.23,calendar_day_share
+"2½""",16-17 Kgs,1.6 mm,16,Running,January,Week 2,8,14,0.225806,12.471,55.23,calendar_day_share
+"2½""",16-17 Kgs,1.6 mm,16,Running,January,Week 3,15,21,0.225806,12.471,55.23,calendar_day_share
+"2½""",16-17 Kgs,1.6 mm,16,Running,January,Week 4,22,28,0.225806,12.471,55.23,calendar_day_share
+"2½""",16-17 Kgs,1.6 mm,16,Running,January,Week 5,29,31,0.096774,5.345,55.23,calendar_day_share
+"2½""",21-22 Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,66.489,294.453,calendar_day_share
+"2½""",21-22 Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,66.489,294.453,calendar_day_share
+"2½""",21-22 Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,66.489,294.453,calendar_day_share
+"2½""",21-22 Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,66.489,294.453,calendar_day_share
+"2½""",21-22 Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,28.495,294.453,calendar_day_share
+"2½""",27-28 Kgs,2.65 mm,12,Running,January,Week 1,1,7,0.225806,0.146,0.646,calendar_day_share
+"2½""",27-28 Kgs,2.65 mm,12,Running,January,Week 2,8,14,0.225806,0.146,0.646,calendar_day_share
+"2½""",27-28 Kgs,2.65 mm,12,Running,January,Week 3,15,21,0.225806,0.146,0.646,calendar_day_share
+"2½""",27-28 Kgs,2.65 mm,12,Running,January,Week 4,22,28,0.225806,0.146,0.646,calendar_day_share
+"2½""",27-28 Kgs,2.65 mm,12,Running,January,Week 5,29,31,0.096774,0.062,0.646,calendar_day_share
+"2½""",32-34 Kgs,3 mm,10,Running,January,Week 1,1,7,0.225806,52.303,231.626,calendar_day_share
+"2½""",32-34 Kgs,3 mm,10,Running,January,Week 2,8,14,0.225806,52.303,231.626,calendar_day_share
+"2½""",32-34 Kgs,3 mm,10,Running,January,Week 3,15,21,0.225806,52.303,231.626,calendar_day_share
+"2½""",32-34 Kgs,3 mm,10,Running,January,Week 4,22,28,0.225806,52.303,231.626,calendar_day_share
+"2½""",32-34 Kgs,3 mm,10,Running,January,Week 5,29,31,0.096774,22.415,231.626,calendar_day_share
+"2½""",32-34 Kgs,5 mm,5,Running,January,Week 1,1,7,0.225806,0.005,0.022,calendar_day_share
+"2½""",32-34 Kgs,5 mm,5,Running,January,Week 2,8,14,0.225806,0.005,0.022,calendar_day_share
+"2½""",32-34 Kgs,5 mm,5,Running,January,Week 3,15,21,0.225806,0.005,0.022,calendar_day_share
+"2½""",32-34 Kgs,5 mm,5,Running,January,Week 4,22,28,0.225806,0.005,0.022,calendar_day_share
+"2½""",32-34 Kgs,5 mm,5,Running,January,Week 5,29,31,0.096774,0.002,0.022,calendar_day_share
+"2½""",37-38 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,9.126,40.415,calendar_day_share
+"2½""",37-38 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,9.126,40.415,calendar_day_share
+"2½""",37-38 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,9.126,40.415,calendar_day_share
+"2½""",37-38 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,9.126,40.415,calendar_day_share
+"2½""",37-38 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,3.911,40.415,calendar_day_share
+"2½""",52-54 Kgs,5 mm,6,Running,January,Week 1,1,7,0.225806,0.005,0.022,calendar_day_share
+"2½""",52-54 Kgs,5 mm,6,Running,January,Week 2,8,14,0.225806,0.005,0.022,calendar_day_share
+"2½""",52-54 Kgs,5 mm,6,Running,January,Week 3,15,21,0.225806,0.005,0.022,calendar_day_share
+"2½""",52-54 Kgs,5 mm,6,Running,January,Week 4,22,28,0.225806,0.005,0.022,calendar_day_share
+"2½""",52-54 Kgs,5 mm,6,Running,January,Week 5,29,31,0.096774,0.002,0.022,calendar_day_share
+"3""",32-34 Kgs,2.65 mm,12,Running,January,Week 1,1,7,0.225806,36.48,161.555,calendar_day_share
+"3""",32-34 Kgs,2.65 mm,12,Running,January,Week 2,8,14,0.225806,36.48,161.555,calendar_day_share
+"3""",32-34 Kgs,2.65 mm,12,Running,January,Week 3,15,21,0.225806,36.48,161.555,calendar_day_share
+"3""",32-34 Kgs,2.65 mm,12,Running,January,Week 4,22,28,0.225806,36.48,161.555,calendar_day_share
+"3""",32-34 Kgs,2.65 mm,12,Running,January,Week 5,29,31,0.096774,15.634,161.555,calendar_day_share
+"3""",37-38 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,0.006,0.027,calendar_day_share
+"3""",37-38 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,0.006,0.027,calendar_day_share
+"3""",37-38 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,0.006,0.027,calendar_day_share
+"3""",37-38 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,0.006,0.027,calendar_day_share
+"3""",37-38 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,0.003,0.027,calendar_day_share
+"3""",38-39 Kgs,3.25 mm,10,Running,January,Week 1,1,7,0.225806,52.106,230.756,calendar_day_share
+"3""",38-39 Kgs,3.25 mm,10,Running,January,Week 2,8,14,0.225806,52.106,230.756,calendar_day_share
+"3""",38-39 Kgs,3.25 mm,10,Running,January,Week 3,15,21,0.225806,52.106,230.756,calendar_day_share
+"3""",38-39 Kgs,3.25 mm,10,Running,January,Week 4,22,28,0.225806,52.106,230.756,calendar_day_share
+"3""",38-39 Kgs,3.25 mm,10,Running,January,Week 5,29,31,0.096774,22.331,230.756,calendar_day_share
+"3""",45-46 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,1.526,6.759,calendar_day_share
+"3""",45-46 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,1.526,6.759,calendar_day_share
+"3""",45-46 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,1.526,6.759,calendar_day_share
+"3""",45-46 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,1.526,6.759,calendar_day_share
+"3""",45-46 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,0.654,6.759,calendar_day_share
+"3""",50-52 Kgs,4 mm,8,Running,January,Week 1,1,7,0.225806,0.005,0.023,calendar_day_share
+"3""",50-52 Kgs,4 mm,8,Running,January,Week 2,8,14,0.225806,0.005,0.023,calendar_day_share
+"3""",50-52 Kgs,4 mm,8,Running,January,Week 3,15,21,0.225806,0.005,0.023,calendar_day_share
+"3""",50-52 Kgs,4 mm,8,Running,January,Week 4,22,28,0.225806,0.005,0.023,calendar_day_share
+"3""",50-52 Kgs,4 mm,8,Running,January,Week 5,29,31,0.096774,0.002,0.023,calendar_day_share
+"3""",52-54 Kgs,5 mm,6,Running,January,Week 1,1,7,0.225806,6.218,27.537,calendar_day_share
+"3""",52-54 Kgs,5 mm,6,Running,January,Week 2,8,14,0.225806,6.218,27.537,calendar_day_share
+"3""",52-54 Kgs,5 mm,6,Running,January,Week 3,15,21,0.225806,6.218,27.537,calendar_day_share
+"3""",52-54 Kgs,5 mm,6,Running,January,Week 4,22,28,0.225806,6.218,27.537,calendar_day_share
+"3""",52-54 Kgs,5 mm,6,Running,January,Week 5,29,31,0.096774,2.665,27.537,calendar_day_share
+"3""",64-65 Kgs,6 mm,5,Unknown,January,Week 1,1,7,0.225806,0.161,0.714,calendar_day_share
+"3""",64-65 Kgs,6 mm,5,Unknown,January,Week 2,8,14,0.225806,0.161,0.714,calendar_day_share
+"3""",64-65 Kgs,6 mm,5,Unknown,January,Week 3,15,21,0.225806,0.161,0.714,calendar_day_share
+"3""",64-65 Kgs,6 mm,5,Unknown,January,Week 4,22,28,0.225806,0.161,0.714,calendar_day_share
+"3""",64-65 Kgs,6 mm,5,Unknown,January,Week 5,29,31,0.096774,0.069,0.714,calendar_day_share
+"3""",65-66 Kgs,5 mm,6,Running,January,Week 1,1,7,0.225806,0.005,0.022,calendar_day_share
+"3""",65-66 Kgs,5 mm,6,Running,January,Week 2,8,14,0.225806,0.005,0.022,calendar_day_share
+"3""",65-66 Kgs,5 mm,6,Running,January,Week 3,15,21,0.225806,0.005,0.022,calendar_day_share
+"3""",65-66 Kgs,5 mm,6,Running,January,Week 4,22,28,0.225806,0.005,0.022,calendar_day_share
+"3""",65-66 Kgs,5 mm,6,Running,January,Week 5,29,31,0.096774,0.002,0.022,calendar_day_share
+"4"" OD",65-65 Kgs,Unknown,Unknown,Running,January,Week 1,1,7,0.225806,0.004,0.019,calendar_day_share
+"4"" OD",65-65 Kgs,Unknown,Unknown,Running,January,Week 2,8,14,0.225806,0.004,0.019,calendar_day_share
+"4"" OD",65-65 Kgs,Unknown,Unknown,Running,January,Week 3,15,21,0.225806,0.004,0.019,calendar_day_share
+"4"" OD",65-65 Kgs,Unknown,Unknown,Running,January,Week 4,22,28,0.225806,0.004,0.019,calendar_day_share
+"4"" OD",65-65 Kgs,Unknown,Unknown,Running,January,Week 5,29,31,0.096774,0.002,0.019,calendar_day_share
+"4"" OD",66-67 Kgs,4 mm,8,Running,January,Week 1,1,7,0.225806,0.579,2.563,calendar_day_share
+"4"" OD",66-67 Kgs,4 mm,8,Running,January,Week 2,8,14,0.225806,0.579,2.563,calendar_day_share
+"4"" OD",66-67 Kgs,4 mm,8,Running,January,Week 3,15,21,0.225806,0.579,2.563,calendar_day_share
+"4"" OD",66-67 Kgs,4 mm,8,Running,January,Week 4,22,28,0.225806,0.579,2.563,calendar_day_share
+"4"" OD",66-67 Kgs,4 mm,8,Running,January,Week 5,29,31,0.096774,0.248,2.563,calendar_day_share
+"4"" OD",75-76 Kgs,4.5 mm,8,Running,January,Week 1,1,7,0.225806,0.004,0.019,calendar_day_share
+"4"" OD",75-76 Kgs,4.5 mm,8,Running,January,Week 2,8,14,0.225806,0.004,0.019,calendar_day_share
+"4"" OD",75-76 Kgs,4.5 mm,8,Running,January,Week 3,15,21,0.225806,0.004,0.019,calendar_day_share
+"4"" OD",75-76 Kgs,4.5 mm,8,Running,January,Week 4,22,28,0.225806,0.004,0.019,calendar_day_share
+"4"" OD",75-76 Kgs,4.5 mm,8,Running,January,Week 5,29,31,0.096774,0.002,0.019,calendar_day_share
+"4""",25-26 Kgs,1.6 mm,16,Running,January,Week 1,1,7,0.225806,4.295,19.021,calendar_day_share
+"4""",25-26 Kgs,1.6 mm,16,Running,January,Week 2,8,14,0.225806,4.295,19.021,calendar_day_share
+"4""",25-26 Kgs,1.6 mm,16,Running,January,Week 3,15,21,0.225806,4.295,19.021,calendar_day_share
+"4""",25-26 Kgs,1.6 mm,16,Running,January,Week 4,22,28,0.225806,4.295,19.021,calendar_day_share
+"4""",25-26 Kgs,1.6 mm,16,Running,January,Week 5,29,31,0.096774,1.841,19.021,calendar_day_share
+"4""",25-26 Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,0.007,0.033,calendar_day_share
+"4""",25-26 Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,0.007,0.033,calendar_day_share
+"4""",25-26 Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,0.007,0.033,calendar_day_share
+"4""",25-26 Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,0.007,0.033,calendar_day_share
+"4""",25-26 Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,0.003,0.033,calendar_day_share
+"4""",32-34 Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,30.555,135.314,calendar_day_share
+"4""",32-34 Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,30.555,135.314,calendar_day_share
+"4""",32-34 Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,30.555,135.314,calendar_day_share
+"4""",32-34 Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,30.555,135.314,calendar_day_share
+"4""",32-34 Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,13.095,135.314,calendar_day_share
+"4""",40-42 Kgs,2.65 mm,12,Running,January,Week 1,1,7,0.225806,28.687,127.044,calendar_day_share
+"4""",40-42 Kgs,2.65 mm,12,Running,January,Week 2,8,14,0.225806,28.687,127.044,calendar_day_share
+"4""",40-42 Kgs,2.65 mm,12,Running,January,Week 3,15,21,0.225806,28.687,127.044,calendar_day_share
+"4""",40-42 Kgs,2.65 mm,12,Running,January,Week 4,22,28,0.225806,28.687,127.044,calendar_day_share
+"4""",40-42 Kgs,2.65 mm,12,Running,January,Week 5,29,31,0.096774,12.295,127.044,calendar_day_share
+"4""",45-46 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,0.005,0.021,calendar_day_share
+"4""",45-46 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,0.005,0.021,calendar_day_share
+"4""",45-46 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,0.005,0.021,calendar_day_share
+"4""",45-46 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,0.005,0.021,calendar_day_share
+"4""",45-46 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,0.002,0.021,calendar_day_share
+"4""",48-50 Kgs,3.25 mm,10,Running,January,Week 1,1,7,0.225806,67.367,298.338,calendar_day_share
+"4""",48-50 Kgs,3.25 mm,10,Running,January,Week 2,8,14,0.225806,67.367,298.338,calendar_day_share
+"4""",48-50 Kgs,3.25 mm,10,Running,January,Week 3,15,21,0.225806,67.367,298.338,calendar_day_share
+"4""",48-50 Kgs,3.25 mm,10,Running,January,Week 4,22,28,0.225806,67.367,298.338,calendar_day_share
+"4""",48-50 Kgs,3.25 mm,10,Running,January,Week 5,29,31,0.096774,28.871,298.338,calendar_day_share
+"4""",50-52 Kgs,4 mm,8,Running,January,Week 1,1,7,0.225806,7.426,32.888,calendar_day_share
+"4""",50-52 Kgs,4 mm,8,Running,January,Week 2,8,14,0.225806,7.426,32.888,calendar_day_share
+"4""",50-52 Kgs,4 mm,8,Running,January,Week 3,15,21,0.225806,7.426,32.888,calendar_day_share
+"4""",50-52 Kgs,4 mm,8,Running,January,Week 4,22,28,0.225806,7.426,32.888,calendar_day_share
+"4""",50-52 Kgs,4 mm,8,Running,January,Week 5,29,31,0.096774,3.183,32.888,calendar_day_share
+"4""",58-60 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,9.459,41.889,calendar_day_share
+"4""",58-60 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,9.459,41.889,calendar_day_share
+"4""",58-60 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,9.459,41.889,calendar_day_share
+"4""",58-60 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,9.459,41.889,calendar_day_share
+"4""",58-60 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,4.054,41.889,calendar_day_share
+"4""",61-62 Kgs,3.9 mm,9,Running,January,Week 1,1,7,0.225806,4.613,20.43,calendar_day_share
+"4""",61-62 Kgs,3.9 mm,9,Running,January,Week 2,8,14,0.225806,4.613,20.43,calendar_day_share
+"4""",61-62 Kgs,3.9 mm,9,Running,January,Week 3,15,21,0.225806,4.613,20.43,calendar_day_share
+"4""",61-62 Kgs,3.9 mm,9,Running,January,Week 4,22,28,0.225806,4.613,20.43,calendar_day_share
+"4""",61-62 Kgs,3.9 mm,9,Running,January,Week 5,29,31,0.096774,1.977,20.43,calendar_day_share
+"4""",65-66 Kgs,5 mm,6,Running,January,Week 1,1,7,0.225806,4.885,21.633,calendar_day_share
+"4""",65-66 Kgs,5 mm,6,Running,January,Week 2,8,14,0.225806,4.885,21.633,calendar_day_share
+"4""",65-66 Kgs,5 mm,6,Running,January,Week 3,15,21,0.225806,4.885,21.633,calendar_day_share
+"4""",65-66 Kgs,5 mm,6,Running,January,Week 4,22,28,0.225806,4.885,21.633,calendar_day_share
+"4""",65-66 Kgs,5 mm,6,Running,January,Week 5,29,31,0.096774,2.094,21.633,calendar_day_share
+"4""",66-67 Kgs,4 mm,8,Running,January,Week 1,1,7,0.225806,0.089,0.394,calendar_day_share
+"4""",66-67 Kgs,4 mm,8,Running,January,Week 2,8,14,0.225806,0.089,0.394,calendar_day_share
+"4""",66-67 Kgs,4 mm,8,Running,January,Week 3,15,21,0.225806,0.089,0.394,calendar_day_share
+"4""",66-67 Kgs,4 mm,8,Running,January,Week 4,22,28,0.225806,0.089,0.394,calendar_day_share
+"4""",66-67 Kgs,4 mm,8,Running,January,Week 5,29,31,0.096774,0.038,0.394,calendar_day_share
+"4""",75-76 Kgs,4.5 mm,8,Running,January,Week 1,1,7,0.225806,0.004,0.019,calendar_day_share
+"4""",75-76 Kgs,4.5 mm,8,Running,January,Week 2,8,14,0.225806,0.004,0.019,calendar_day_share
+"4""",75-76 Kgs,4.5 mm,8,Running,January,Week 3,15,21,0.225806,0.004,0.019,calendar_day_share
+"4""",75-76 Kgs,4.5 mm,8,Running,January,Week 4,22,28,0.225806,0.004,0.019,calendar_day_share
+"4""",75-76 Kgs,4.5 mm,8,Running,January,Week 5,29,31,0.096774,0.002,0.019,calendar_day_share
+"4""",95-100 Kgs,6.35 mm,4,Running,January,Week 1,1,7,0.225806,0.004,0.019,calendar_day_share
+"4""",95-100 Kgs,6.35 mm,4,Running,January,Week 2,8,14,0.225806,0.004,0.019,calendar_day_share
+"4""",95-100 Kgs,6.35 mm,4,Running,January,Week 3,15,21,0.225806,0.004,0.019,calendar_day_share
+"4""",95-100 Kgs,6.35 mm,4,Running,January,Week 4,22,28,0.225806,0.004,0.019,calendar_day_share
+"4""",95-100 Kgs,6.35 mm,4,Running,January,Week 5,29,31,0.096774,0.002,0.019,calendar_day_share
+"5"" O.D",100 -102 Kgs,5 mm,5,New,January,Week 1,1,7,0.225806,2.685,11.893,calendar_day_share
+"5"" O.D",100 -102 Kgs,5 mm,5,New,January,Week 2,8,14,0.225806,2.685,11.893,calendar_day_share
+"5"" O.D",100 -102 Kgs,5 mm,5,New,January,Week 3,15,21,0.225806,2.685,11.893,calendar_day_share
+"5"" O.D",100 -102 Kgs,5 mm,5,New,January,Week 4,22,28,0.225806,2.685,11.893,calendar_day_share
+"5"" O.D",100 -102 Kgs,5 mm,5,New,January,Week 5,29,31,0.096774,1.151,11.893,calendar_day_share
+"5"" O.D",113-114 Kgs,6 mm,4,Running,January,Week 1,1,7,0.225806,0.005,0.02,calendar_day_share
+"5"" O.D",113-114 Kgs,6 mm,4,Running,January,Week 2,8,14,0.225806,0.005,0.02,calendar_day_share
+"5"" O.D",113-114 Kgs,6 mm,4,Running,January,Week 3,15,21,0.225806,0.005,0.02,calendar_day_share
+"5"" O.D",113-114 Kgs,6 mm,4,Running,January,Week 4,22,28,0.225806,0.005,0.02,calendar_day_share
+"5"" O.D",113-114 Kgs,6 mm,4,Running,January,Week 5,29,31,0.096774,0.002,0.02,calendar_day_share
+"5"" O.D",120-125 Kgs,6 mm,4,Running,January,Week 1,1,7,0.225806,0.266,1.177,calendar_day_share
+"5"" O.D",120-125 Kgs,6 mm,4,Running,January,Week 2,8,14,0.225806,0.266,1.177,calendar_day_share
+"5"" O.D",120-125 Kgs,6 mm,4,Running,January,Week 3,15,21,0.225806,0.266,1.177,calendar_day_share
+"5"" O.D",120-125 Kgs,6 mm,4,Running,January,Week 4,22,28,0.225806,0.266,1.177,calendar_day_share
+"5"" O.D",120-125 Kgs,6 mm,4,Running,January,Week 5,29,31,0.096774,0.114,1.177,calendar_day_share
+"5"" O.D",28-29 Kgs,1.2 mm,16,Running,January,Week 1,1,7,0.225806,0.092,0.407,calendar_day_share
+"5"" O.D",28-29 Kgs,1.2 mm,16,Running,January,Week 2,8,14,0.225806,0.092,0.407,calendar_day_share
+"5"" O.D",28-29 Kgs,1.2 mm,16,Running,January,Week 3,15,21,0.225806,0.092,0.407,calendar_day_share
+"5"" O.D",28-29 Kgs,1.2 mm,16,Running,January,Week 4,22,28,0.225806,0.092,0.407,calendar_day_share
+"5"" O.D",28-29 Kgs,1.2 mm,16,Running,January,Week 5,29,31,0.096774,0.039,0.407,calendar_day_share
+"5"" O.D",37-38 Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,0.447,1.98,calendar_day_share
+"5"" O.D",37-38 Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,0.447,1.98,calendar_day_share
+"5"" O.D",37-38 Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,0.447,1.98,calendar_day_share
+"5"" O.D",37-38 Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,0.447,1.98,calendar_day_share
+"5"" O.D",37-38 Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,0.192,1.98,calendar_day_share
+"5"" O.D",75-76 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,0.005,0.021,calendar_day_share
+"5"" O.D",75-76 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,0.005,0.021,calendar_day_share
+"5"" O.D",75-76 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,0.005,0.021,calendar_day_share
+"5"" O.D",75-76 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,0.005,0.021,calendar_day_share
+"5"" O.D",75-76 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,0.002,0.021,calendar_day_share
+"5"" O.D",88-90 Kgs,4 mm,Unknown,Running,January,Week 1,1,7,0.225806,0.005,0.021,calendar_day_share
+"5"" O.D",88-90 Kgs,4 mm,Unknown,Running,January,Week 2,8,14,0.225806,0.005,0.021,calendar_day_share
+"5"" O.D",88-90 Kgs,4 mm,Unknown,Running,January,Week 3,15,21,0.225806,0.005,0.021,calendar_day_share
+"5"" O.D",88-90 Kgs,4 mm,Unknown,Running,January,Week 4,22,28,0.225806,0.005,0.021,calendar_day_share
+"5"" O.D",88-90 Kgs,4 mm,Unknown,Running,January,Week 5,29,31,0.096774,0.002,0.021,calendar_day_share
+"5"" O.D",94-95 Kgs,4.5 mm,5,New,January,Week 1,1,7,0.225806,8.086,35.81,calendar_day_share
+"5"" O.D",94-95 Kgs,4.5 mm,5,New,January,Week 2,8,14,0.225806,8.086,35.81,calendar_day_share
+"5"" O.D",94-95 Kgs,4.5 mm,5,New,January,Week 3,15,21,0.225806,8.086,35.81,calendar_day_share
+"5"" O.D",94-95 Kgs,4.5 mm,5,New,January,Week 4,22,28,0.225806,8.086,35.81,calendar_day_share
+"5"" O.D",94-95 Kgs,4.5 mm,5,New,January,Week 5,29,31,0.096774,3.465,35.81,calendar_day_share
+"5""",100 -102 Kgs,5 mm,5,New,January,Week 1,1,7,0.225806,0.005,0.021,calendar_day_share
+"5""",100 -102 Kgs,5 mm,5,New,January,Week 2,8,14,0.225806,0.005,0.021,calendar_day_share
+"5""",100 -102 Kgs,5 mm,5,New,January,Week 3,15,21,0.225806,0.005,0.021,calendar_day_share
+"5""",100 -102 Kgs,5 mm,5,New,January,Week 4,22,28,0.225806,0.005,0.021,calendar_day_share
+"5""",100 -102 Kgs,5 mm,5,New,January,Week 5,29,31,0.096774,0.002,0.021,calendar_day_share
+"5""",120-125 Kgs,6 mm,4,Running,January,Week 1,1,7,0.225806,0.005,0.02,calendar_day_share
+"5""",120-125 Kgs,6 mm,4,Running,January,Week 2,8,14,0.225806,0.005,0.02,calendar_day_share
+"5""",120-125 Kgs,6 mm,4,Running,January,Week 3,15,21,0.225806,0.005,0.02,calendar_day_share
+"5""",120-125 Kgs,6 mm,4,Running,January,Week 4,22,28,0.225806,0.005,0.02,calendar_day_share
+"5""",120-125 Kgs,6 mm,4,Running,January,Week 5,29,31,0.096774,0.002,0.02,calendar_day_share
+"5""",40-42 Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,13.349,59.116,calendar_day_share
+"5""",40-42 Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,13.349,59.116,calendar_day_share
+"5""",40-42 Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,13.349,59.116,calendar_day_share
+"5""",40-42 Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,13.349,59.116,calendar_day_share
+"5""",40-42 Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,5.721,59.116,calendar_day_share
+"5""",48-50 Kgs,2.35 mm,13,Running,January,Week 1,1,7,0.225806,21.137,93.605,calendar_day_share
+"5""",48-50 Kgs,2.35 mm,13,Running,January,Week 2,8,14,0.225806,21.137,93.605,calendar_day_share
+"5""",48-50 Kgs,2.35 mm,13,Running,January,Week 3,15,21,0.225806,21.137,93.605,calendar_day_share
+"5""",48-50 Kgs,2.35 mm,13,Running,January,Week 4,22,28,0.225806,21.137,93.605,calendar_day_share
+"5""",48-50 Kgs,2.35 mm,13,Running,January,Week 5,29,31,0.096774,9.059,93.605,calendar_day_share
+"5""",54-55 Kgs,2.65 mm,11,Running,January,Week 1,1,7,0.225806,0.047,0.207,calendar_day_share
+"5""",54-55 Kgs,2.65 mm,11,Running,January,Week 2,8,14,0.225806,0.047,0.207,calendar_day_share
+"5""",54-55 Kgs,2.65 mm,11,Running,January,Week 3,15,21,0.225806,0.047,0.207,calendar_day_share
+"5""",54-55 Kgs,2.65 mm,11,Running,January,Week 4,22,28,0.225806,0.047,0.207,calendar_day_share
+"5""",54-55 Kgs,2.65 mm,11,Running,January,Week 5,29,31,0.096774,0.02,0.207,calendar_day_share
+"5""",54-55 Kgs,2.65 mm,12,Running,January,Week 1,1,7,0.225806,0.123,0.547,calendar_day_share
+"5""",54-55 Kgs,2.65 mm,12,Running,January,Week 2,8,14,0.225806,0.123,0.547,calendar_day_share
+"5""",54-55 Kgs,2.65 mm,12,Running,January,Week 3,15,21,0.225806,0.123,0.547,calendar_day_share
+"5""",54-55 Kgs,2.65 mm,12,Running,January,Week 4,22,28,0.225806,0.123,0.547,calendar_day_share
+"5""",54-55 Kgs,2.65 mm,12,Running,January,Week 5,29,31,0.096774,0.053,0.547,calendar_day_share
+"5""",60-62 Kgs,3.25 mm,10,Running,January,Week 1,1,7,0.225806,32.9,145.701,calendar_day_share
+"5""",60-62 Kgs,3.25 mm,10,Running,January,Week 2,8,14,0.225806,32.9,145.701,calendar_day_share
+"5""",60-62 Kgs,3.25 mm,10,Running,January,Week 3,15,21,0.225806,32.9,145.701,calendar_day_share
+"5""",60-62 Kgs,3.25 mm,10,Running,January,Week 4,22,28,0.225806,32.9,145.701,calendar_day_share
+"5""",60-62 Kgs,3.25 mm,10,Running,January,Week 5,29,31,0.096774,14.1,145.701,calendar_day_share
+"5""",65-65 Kgs,Unknown,Unknown,Running,January,Week 1,1,7,0.225806,0.043,0.189,calendar_day_share
+"5""",65-65 Kgs,Unknown,Unknown,Running,January,Week 2,8,14,0.225806,0.043,0.189,calendar_day_share
+"5""",65-65 Kgs,Unknown,Unknown,Running,January,Week 3,15,21,0.225806,0.043,0.189,calendar_day_share
+"5""",65-65 Kgs,Unknown,Unknown,Running,January,Week 4,22,28,0.225806,0.043,0.189,calendar_day_share
+"5""",65-65 Kgs,Unknown,Unknown,Running,January,Week 5,29,31,0.096774,0.018,0.189,calendar_day_share
+"5""",66-67 Kgs,4 mm,8,Running,January,Week 1,1,7,0.225806,0.006,0.024,calendar_day_share
+"5""",66-67 Kgs,4 mm,8,Running,January,Week 2,8,14,0.225806,0.006,0.024,calendar_day_share
+"5""",66-67 Kgs,4 mm,8,Running,January,Week 3,15,21,0.225806,0.006,0.024,calendar_day_share
+"5""",66-67 Kgs,4 mm,8,Running,January,Week 4,22,28,0.225806,0.006,0.024,calendar_day_share
+"5""",66-67 Kgs,4 mm,8,Running,January,Week 5,29,31,0.096774,0.002,0.024,calendar_day_share
+"5""",70-72 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,30.583,135.44,calendar_day_share
+"5""",70-72 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,30.583,135.44,calendar_day_share
+"5""",70-72 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,30.583,135.44,calendar_day_share
+"5""",70-72 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,30.583,135.44,calendar_day_share
+"5""",70-72 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,13.107,135.44,calendar_day_share
+"5""",75-76 Kgs,4.5 mm,8,Running,January,Week 1,1,7,0.225806,5.23,23.161,calendar_day_share
+"5""",75-76 Kgs,4.5 mm,8,Running,January,Week 2,8,14,0.225806,5.23,23.161,calendar_day_share
+"5""",75-76 Kgs,4.5 mm,8,Running,January,Week 3,15,21,0.225806,5.23,23.161,calendar_day_share
+"5""",75-76 Kgs,4.5 mm,8,Running,January,Week 4,22,28,0.225806,5.23,23.161,calendar_day_share
+"5""",75-76 Kgs,4.5 mm,8,Running,January,Week 5,29,31,0.096774,2.241,23.161,calendar_day_share
+"5""",80-82 Kgs,4 mm,8,Running,January,Week 1,1,7,0.225806,3.414,15.118,calendar_day_share
+"5""",80-82 Kgs,4 mm,8,Running,January,Week 2,8,14,0.225806,3.414,15.118,calendar_day_share
+"5""",80-82 Kgs,4 mm,8,Running,January,Week 3,15,21,0.225806,3.414,15.118,calendar_day_share
+"5""",80-82 Kgs,4 mm,8,Running,January,Week 4,22,28,0.225806,3.414,15.118,calendar_day_share
+"5""",80-82 Kgs,4 mm,8,Running,January,Week 5,29,31,0.096774,1.463,15.118,calendar_day_share
+"5""",88-90 Kgs,4 mm,Unknown,Running,January,Week 1,1,7,0.225806,6.86,30.379,calendar_day_share
+"5""",88-90 Kgs,4 mm,Unknown,Running,January,Week 2,8,14,0.225806,6.86,30.379,calendar_day_share
+"5""",88-90 Kgs,4 mm,Unknown,Running,January,Week 3,15,21,0.225806,6.86,30.379,calendar_day_share
+"5""",88-90 Kgs,4 mm,Unknown,Running,January,Week 4,22,28,0.225806,6.86,30.379,calendar_day_share
+"5""",88-90 Kgs,4 mm,Unknown,Running,January,Week 5,29,31,0.096774,2.94,30.379,calendar_day_share
+"5""",94-95 Kgs,4.5 mm,5,New,January,Week 1,1,7,0.225806,0.005,0.021,calendar_day_share
+"5""",94-95 Kgs,4.5 mm,5,New,January,Week 2,8,14,0.225806,0.005,0.021,calendar_day_share
+"5""",94-95 Kgs,4.5 mm,5,New,January,Week 3,15,21,0.225806,0.005,0.021,calendar_day_share
+"5""",94-95 Kgs,4.5 mm,5,New,January,Week 4,22,28,0.225806,0.005,0.021,calendar_day_share
+"5""",94-95 Kgs,4.5 mm,5,New,January,Week 5,29,31,0.096774,0.002,0.021,calendar_day_share
+"5""",95-100 Kgs,6.35 mm,4,Running,January,Week 1,1,7,0.225806,1.36,6.024,calendar_day_share
+"5""",95-100 Kgs,6.35 mm,4,Running,January,Week 2,8,14,0.225806,1.36,6.024,calendar_day_share
+"5""",95-100 Kgs,6.35 mm,4,Running,January,Week 3,15,21,0.225806,1.36,6.024,calendar_day_share
+"5""",95-100 Kgs,6.35 mm,4,Running,January,Week 4,22,28,0.225806,1.36,6.024,calendar_day_share
+"5""",95-100 Kgs,6.35 mm,4,Running,January,Week 5,29,31,0.096774,0.583,6.024,calendar_day_share
+"6"" O.D",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 1,1,7,0.225806,0.037,0.163,calendar_day_share
+"6"" O.D",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 2,8,14,0.225806,0.037,0.163,calendar_day_share
+"6"" O.D",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 3,15,21,0.225806,0.037,0.163,calendar_day_share
+"6"" O.D",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 4,22,28,0.225806,0.037,0.163,calendar_day_share
+"6"" O.D",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 5,29,31,0.096774,0.016,0.163,calendar_day_share
+"6"" O.D",108-110 Kgs,4.5 mm,7,Running,January,Week 1,1,7,0.225806,0.005,0.02,calendar_day_share
+"6"" O.D",108-110 Kgs,4.5 mm,7,Running,January,Week 2,8,14,0.225806,0.005,0.02,calendar_day_share
+"6"" O.D",108-110 Kgs,4.5 mm,7,Running,January,Week 3,15,21,0.225806,0.005,0.02,calendar_day_share
+"6"" O.D",108-110 Kgs,4.5 mm,7,Running,January,Week 4,22,28,0.225806,0.005,0.02,calendar_day_share
+"6"" O.D",108-110 Kgs,4.5 mm,7,Running,January,Week 5,29,31,0.096774,0.002,0.02,calendar_day_share
+"6"" O.D",140-145 Kgs,Unknown,Unknown,Unknown,January,Week 1,1,7,0.225806,0.005,0.02,calendar_day_share
+"6"" O.D",140-145 Kgs,Unknown,Unknown,Unknown,January,Week 2,8,14,0.225806,0.005,0.02,calendar_day_share
+"6"" O.D",140-145 Kgs,Unknown,Unknown,Unknown,January,Week 3,15,21,0.225806,0.005,0.02,calendar_day_share
+"6"" O.D",140-145 Kgs,Unknown,Unknown,Unknown,January,Week 4,22,28,0.225806,0.005,0.02,calendar_day_share
+"6"" O.D",140-145 Kgs,Unknown,Unknown,Unknown,January,Week 5,29,31,0.096774,0.002,0.02,calendar_day_share
+"6"" O.D",96-97 Kgs,4 mm,Unknown,Running,January,Week 1,1,7,0.225806,0.012,0.054,calendar_day_share
+"6"" O.D",96-97 Kgs,4 mm,Unknown,Running,January,Week 2,8,14,0.225806,0.012,0.054,calendar_day_share
+"6"" O.D",96-97 Kgs,4 mm,Unknown,Running,January,Week 3,15,21,0.225806,0.012,0.054,calendar_day_share
+"6"" O.D",96-97 Kgs,4 mm,Unknown,Running,January,Week 4,22,28,0.225806,0.012,0.054,calendar_day_share
+"6"" O.D",96-97 Kgs,4 mm,Unknown,Running,January,Week 5,29,31,0.096774,0.005,0.054,calendar_day_share
+"6""",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 1,1,7,0.225806,0.005,0.02,calendar_day_share
+"6""",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 2,8,14,0.225806,0.005,0.02,calendar_day_share
+"6""",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 3,15,21,0.225806,0.005,0.02,calendar_day_share
+"6""",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 4,22,28,0.225806,0.005,0.02,calendar_day_share
+"6""",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 5,29,31,0.096774,0.002,0.02,calendar_day_share
+"6""",108-110 Kgs,4.5 mm,7,Running,January,Week 1,1,7,0.225806,0.005,0.02,calendar_day_share
+"6""",108-110 Kgs,4.5 mm,7,Running,January,Week 2,8,14,0.225806,0.005,0.02,calendar_day_share
+"6""",108-110 Kgs,4.5 mm,7,Running,January,Week 3,15,21,0.225806,0.005,0.02,calendar_day_share
+"6""",108-110 Kgs,4.5 mm,7,Running,January,Week 4,22,28,0.225806,0.005,0.02,calendar_day_share
+"6""",108-110 Kgs,4.5 mm,7,Running,January,Week 5,29,31,0.096774,0.002,0.02,calendar_day_share
+"6""",112-114 Kgs,4.75 mm,6,Running,January,Week 1,1,7,0.225806,0.005,0.02,calendar_day_share
+"6""",112-114 Kgs,4.75 mm,6,Running,January,Week 2,8,14,0.225806,0.005,0.02,calendar_day_share
+"6""",112-114 Kgs,4.75 mm,6,Running,January,Week 3,15,21,0.225806,0.005,0.02,calendar_day_share
+"6""",112-114 Kgs,4.75 mm,6,Running,January,Week 4,22,28,0.225806,0.005,0.02,calendar_day_share
+"6""",112-114 Kgs,4.75 mm,6,Running,January,Week 5,29,31,0.096774,0.002,0.02,calendar_day_share
+"6""",113-114 Kgs,6 mm,4,Running,January,Week 1,1,7,0.225806,0.074,0.328,calendar_day_share
+"6""",113-114 Kgs,6 mm,4,Running,January,Week 2,8,14,0.225806,0.074,0.328,calendar_day_share
+"6""",113-114 Kgs,6 mm,4,Running,January,Week 3,15,21,0.225806,0.074,0.328,calendar_day_share
+"6""",113-114 Kgs,6 mm,4,Running,January,Week 4,22,28,0.225806,0.074,0.328,calendar_day_share
+"6""",113-114 Kgs,6 mm,4,Running,January,Week 5,29,31,0.096774,0.032,0.328,calendar_day_share
+"6""",35- 36 Kgs,1.6 mm,16,Running,January,Week 1,1,7,0.225806,0.069,0.305,calendar_day_share
+"6""",35- 36 Kgs,1.6 mm,16,Running,January,Week 2,8,14,0.225806,0.069,0.305,calendar_day_share
+"6""",35- 36 Kgs,1.6 mm,16,Running,January,Week 3,15,21,0.225806,0.069,0.305,calendar_day_share
+"6""",35- 36 Kgs,1.6 mm,16,Running,January,Week 4,22,28,0.225806,0.069,0.305,calendar_day_share
+"6""",35- 36 Kgs,1.6 mm,16,Running,January,Week 5,29,31,0.096774,0.03,0.305,calendar_day_share
+"6""",37-38 Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,0.344,1.522,calendar_day_share
+"6""",37-38 Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,0.344,1.522,calendar_day_share
+"6""",37-38 Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,0.344,1.522,calendar_day_share
+"6""",37-38 Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,0.344,1.522,calendar_day_share
+"6""",37-38 Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,0.147,1.522,calendar_day_share
+"6""",48-50 Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,0.609,2.696,calendar_day_share
+"6""",48-50 Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,0.609,2.696,calendar_day_share
+"6""",48-50 Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,0.609,2.696,calendar_day_share
+"6""",48-50 Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,0.609,2.696,calendar_day_share
+"6""",48-50 Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,0.261,2.696,calendar_day_share
+"6""",52-54 Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,0.197,0.874,calendar_day_share
+"6""",52-54 Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,0.197,0.874,calendar_day_share
+"6""",52-54 Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,0.197,0.874,calendar_day_share
+"6""",52-54 Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,0.197,0.874,calendar_day_share
+"6""",52-54 Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,0.085,0.874,calendar_day_share
+"6""",60-62 Kgs,2.35 mm,12,Running,January,Week 1,1,7,0.225806,0.151,0.669,calendar_day_share
+"6""",60-62 Kgs,2.35 mm,12,Running,January,Week 2,8,14,0.225806,0.151,0.669,calendar_day_share
+"6""",60-62 Kgs,2.35 mm,12,Running,January,Week 3,15,21,0.225806,0.151,0.669,calendar_day_share
+"6""",60-62 Kgs,2.35 mm,12,Running,January,Week 4,22,28,0.225806,0.151,0.669,calendar_day_share
+"6""",60-62 Kgs,2.35 mm,12,Running,January,Week 5,29,31,0.096774,0.065,0.669,calendar_day_share
+"6""",68-69 Kgs,Unknown,Unknown,Running,January,Week 1,1,7,0.225806,0.043,0.189,calendar_day_share
+"6""",68-69 Kgs,Unknown,Unknown,Running,January,Week 2,8,14,0.225806,0.043,0.189,calendar_day_share
+"6""",68-69 Kgs,Unknown,Unknown,Running,January,Week 3,15,21,0.225806,0.043,0.189,calendar_day_share
+"6""",68-69 Kgs,Unknown,Unknown,Running,January,Week 4,22,28,0.225806,0.043,0.189,calendar_day_share
+"6""",68-69 Kgs,Unknown,Unknown,Running,January,Week 5,29,31,0.096774,0.018,0.189,calendar_day_share
+"6""",72-74 Kgs,3.25 mm,10,Running,January,Week 1,1,7,0.225806,28.955,128.231,calendar_day_share
+"6""",72-74 Kgs,3.25 mm,10,Running,January,Week 2,8,14,0.225806,28.955,128.231,calendar_day_share
+"6""",72-74 Kgs,3.25 mm,10,Running,January,Week 3,15,21,0.225806,28.955,128.231,calendar_day_share
+"6""",72-74 Kgs,3.25 mm,10,Running,January,Week 4,22,28,0.225806,28.955,128.231,calendar_day_share
+"6""",72-74 Kgs,3.25 mm,10,Running,January,Week 5,29,31,0.096774,12.409,128.231,calendar_day_share
+"6""",75-76 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,0.25,1.106,calendar_day_share
+"6""",75-76 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,0.25,1.106,calendar_day_share
+"6""",75-76 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,0.25,1.106,calendar_day_share
+"6""",75-76 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,0.25,1.106,calendar_day_share
+"6""",75-76 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,0.107,1.106,calendar_day_share
+"6""",78-80 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,0.05,0.22,calendar_day_share
+"6""",78-80 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,0.05,0.22,calendar_day_share
+"6""",78-80 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,0.05,0.22,calendar_day_share
+"6""",78-80 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,0.05,0.22,calendar_day_share
+"6""",78-80 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,0.021,0.22,calendar_day_share
+"6""",84-86 Kgs,3.65 mm,9,Running,January,Week 1,1,7,0.225806,19.916,88.199,calendar_day_share
+"6""",84-86 Kgs,3.65 mm,9,Running,January,Week 2,8,14,0.225806,19.916,88.199,calendar_day_share
+"6""",84-86 Kgs,3.65 mm,9,Running,January,Week 3,15,21,0.225806,19.916,88.199,calendar_day_share
+"6""",84-86 Kgs,3.65 mm,9,Running,January,Week 4,22,28,0.225806,19.916,88.199,calendar_day_share
+"6""",84-86 Kgs,3.65 mm,9,Running,January,Week 5,29,31,0.096774,8.535,88.199,calendar_day_share
+"6""",96-97 Kgs,4 mm,Unknown,Running,January,Week 1,1,7,0.225806,6.604,29.244,calendar_day_share
+"6""",96-97 Kgs,4 mm,Unknown,Running,January,Week 2,8,14,0.225806,6.604,29.244,calendar_day_share
+"6""",96-97 Kgs,4 mm,Unknown,Running,January,Week 3,15,21,0.225806,6.604,29.244,calendar_day_share
+"6""",96-97 Kgs,4 mm,Unknown,Running,January,Week 4,22,28,0.225806,6.604,29.244,calendar_day_share
+"6""",96-97 Kgs,4 mm,Unknown,Running,January,Week 5,29,31,0.096774,2.83,29.244,calendar_day_share
+"7""",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 1,1,7,0.225806,0.005,0.02,calendar_day_share
+"7""",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 2,8,14,0.225806,0.005,0.02,calendar_day_share
+"7""",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 3,15,21,0.225806,0.005,0.02,calendar_day_share
+"7""",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 4,22,28,0.225806,0.005,0.02,calendar_day_share
+"7""",100-103 Kgs,4.25 mm,Unknown,Running,January,Week 5,29,31,0.096774,0.002,0.02,calendar_day_share
+"7""",108-110 Kgs,4.5 mm,7,Running,January,Week 1,1,7,0.225806,0.037,0.165,calendar_day_share
+"7""",108-110 Kgs,4.5 mm,7,Running,January,Week 2,8,14,0.225806,0.037,0.165,calendar_day_share
+"7""",108-110 Kgs,4.5 mm,7,Running,January,Week 3,15,21,0.225806,0.037,0.165,calendar_day_share
+"7""",108-110 Kgs,4.5 mm,7,Running,January,Week 4,22,28,0.225806,0.037,0.165,calendar_day_share
+"7""",108-110 Kgs,4.5 mm,7,Running,January,Week 5,29,31,0.096774,0.016,0.165,calendar_day_share
+"7""",110-112 Kgs,Unknown,Unknown,Running,January,Week 1,1,7,0.225806,1.523,6.745,calendar_day_share
+"7""",110-112 Kgs,Unknown,Unknown,Running,January,Week 2,8,14,0.225806,1.523,6.745,calendar_day_share
+"7""",110-112 Kgs,Unknown,Unknown,Running,January,Week 3,15,21,0.225806,1.523,6.745,calendar_day_share
+"7""",110-112 Kgs,Unknown,Unknown,Running,January,Week 4,22,28,0.225806,1.523,6.745,calendar_day_share
+"7""",110-112 Kgs,Unknown,Unknown,Running,January,Week 5,29,31,0.096774,0.653,6.745,calendar_day_share
+"7""",112-114 Kgs,4.75 mm,6,Running,January,Week 1,1,7,0.225806,3.183,14.096,calendar_day_share
+"7""",112-114 Kgs,4.75 mm,6,Running,January,Week 2,8,14,0.225806,3.183,14.096,calendar_day_share
+"7""",112-114 Kgs,4.75 mm,6,Running,January,Week 3,15,21,0.225806,3.183,14.096,calendar_day_share
+"7""",112-114 Kgs,4.75 mm,6,Running,January,Week 4,22,28,0.225806,3.183,14.096,calendar_day_share
+"7""",112-114 Kgs,4.75 mm,6,Running,January,Week 5,29,31,0.096774,1.364,14.096,calendar_day_share
+"7""",140-145 Kgs,Unknown,Unknown,Unknown,January,Week 1,1,7,0.225806,0.03,0.135,calendar_day_share
+"7""",140-145 Kgs,Unknown,Unknown,Unknown,January,Week 2,8,14,0.225806,0.03,0.135,calendar_day_share
+"7""",140-145 Kgs,Unknown,Unknown,Unknown,January,Week 3,15,21,0.225806,0.03,0.135,calendar_day_share
+"7""",140-145 Kgs,Unknown,Unknown,Unknown,January,Week 4,22,28,0.225806,0.03,0.135,calendar_day_share
+"7""",140-145 Kgs,Unknown,Unknown,Unknown,January,Week 5,29,31,0.096774,0.013,0.135,calendar_day_share
+"7""",60-62 Kgs,Unknown,Unknown,Running,January,Week 1,1,7,0.225806,0.064,0.281,calendar_day_share
+"7""",60-62 Kgs,Unknown,Unknown,Running,January,Week 2,8,14,0.225806,0.064,0.281,calendar_day_share
+"7""",60-62 Kgs,Unknown,Unknown,Running,January,Week 3,15,21,0.225806,0.064,0.281,calendar_day_share
+"7""",60-62 Kgs,Unknown,Unknown,Running,January,Week 4,22,28,0.225806,0.064,0.281,calendar_day_share
+"7""",60-62 Kgs,Unknown,Unknown,Running,January,Week 5,29,31,0.096774,0.027,0.281,calendar_day_share
+¾”,4-4½ Kgs,1.2 mm,18,Running,January,Week 1,1,7,0.225806,1.531,6.778,calendar_day_share
+¾”,4-4½ Kgs,1.2 mm,18,Running,January,Week 2,8,14,0.225806,1.531,6.778,calendar_day_share
+¾”,4-4½ Kgs,1.2 mm,18,Running,January,Week 3,15,21,0.225806,1.531,6.778,calendar_day_share
+¾”,4-4½ Kgs,1.2 mm,18,Running,January,Week 4,22,28,0.225806,1.531,6.778,calendar_day_share
+¾”,4-4½ Kgs,1.2 mm,18,Running,January,Week 5,29,31,0.096774,0.656,6.778,calendar_day_share
+¾”,5½-6 Kgs,1.6 mm,16,Running,January,Week 1,1,7,0.225806,0.006,0.027,calendar_day_share
+¾”,5½-6 Kgs,1.6 mm,16,Running,January,Week 2,8,14,0.225806,0.006,0.027,calendar_day_share
+¾”,5½-6 Kgs,1.6 mm,16,Running,January,Week 3,15,21,0.225806,0.006,0.027,calendar_day_share
+¾”,5½-6 Kgs,1.6 mm,16,Running,January,Week 4,22,28,0.225806,0.006,0.027,calendar_day_share
+¾”,5½-6 Kgs,1.6 mm,16,Running,January,Week 5,29,31,0.096774,0.003,0.027,calendar_day_share
+¾”,6 -7 Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,41.533,183.93,calendar_day_share
+¾”,6 -7 Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,41.533,183.93,calendar_day_share
+¾”,6 -7 Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,41.533,183.93,calendar_day_share
+¾”,6 -7 Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,41.533,183.93,calendar_day_share
+¾”,6 -7 Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,17.8,183.93,calendar_day_share
+¾”,7 -7½ Kgs,2 mm,14,Running,January,Week 1,1,7,0.225806,21.864,96.825,calendar_day_share
+¾”,7 -7½ Kgs,2 mm,14,Running,January,Week 2,8,14,0.225806,21.864,96.825,calendar_day_share
+¾”,7 -7½ Kgs,2 mm,14,Running,January,Week 3,15,21,0.225806,21.864,96.825,calendar_day_share
+¾”,7 -7½ Kgs,2 mm,14,Running,January,Week 4,22,28,0.225806,21.864,96.825,calendar_day_share
+¾”,7 -7½ Kgs,2 mm,14,Running,January,Week 5,29,31,0.096774,9.37,96.825,calendar_day_share
+¾”,8-8½ Kgs,2.35 mm,12,Running,January,Week 1,1,7,0.225806,0.047,0.207,calendar_day_share
+¾”,8-8½ Kgs,2.35 mm,12,Running,January,Week 2,8,14,0.225806,0.047,0.207,calendar_day_share
+¾”,8-8½ Kgs,2.35 mm,12,Running,January,Week 3,15,21,0.225806,0.047,0.207,calendar_day_share
+¾”,8-8½ Kgs,2.35 mm,12,Running,January,Week 4,22,28,0.225806,0.047,0.207,calendar_day_share
+¾”,8-8½ Kgs,2.35 mm,12,Running,January,Week 5,29,31,0.096774,0.02,0.207,calendar_day_share
